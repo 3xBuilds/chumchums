@@ -5,12 +5,14 @@ import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { connectorsForWallets, darkTheme } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { phantomWallet, metaMaskWallet, coinbaseWallet, walletConnectWallet, rainbowWallet } from '@rainbow-me/rainbowkit/wallets';
-import { mainnet, goerli, polygon } from "wagmi/chains";
+import { mainnet, goerli, polygon, base } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
-const WalletIdContext = createContext();
+
+
+const WalletIdContext = createContext<any>(null);
 
 const { chains, publicClient } = configureChains(
-  [polygon],
+  [base],
   [publicProvider()]
 );
 
@@ -46,7 +48,8 @@ const wagmiConfig = createConfig({
 });
 
 
-const Rainbow = ({ children }) => {
+
+const Rainbow = ({ children }:any) => {
   return (
     <WagmiConfig config={wagmiConfig}>
       {/* Provide the wallet ID through context */}
