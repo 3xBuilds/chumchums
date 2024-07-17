@@ -1,6 +1,7 @@
 "use client"
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { IoMdWallet } from 'react-icons/io';
 
 export const WalletConnectButton = () => {
   return (
@@ -38,50 +39,24 @@ export const WalletConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button" className='bg-yellow-400 border-2 border-black text-black rounded-full px-3 py-1 shadow-xl transform transition duration-300 ease-in-out shadow-black/30 hover:-translate-y-1 hover:bg-yellow-200'>
-                    Connect Wallet
+                  <button onClick={openConnectModal} type="button" className='text-black font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
+                    <IoMdWallet className='text-2xl'/>
+                    Connect
                   </button>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button" className='bg-red-500 border-2 border-black text-black rounded-full px-3 py-1 shadow-xl transform transition duration-300 ease-in-out shadow-black/30 hover:-translate-y-1 hover:bg-red-300'>
+                  <button onClick={openChainModal} type="button" className='text-black bg-red-500 hover:bg-red-400 font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
                     Wrong network
                   </button>
                 );
               }
               return (
                 <div style={{ display: 'flex', gap: 12 }}>
-                  <button
-                    onClick={openChainModal}
-                    style={{ display: 'flex', alignItems: 'center' }}
-                    type="button"
-                    className='border-2 border-black rounded-full'
-                  >
-                    {chain.hasIcon && (
-                      <div
-                        style={{
-                          background: chain.iconBackground,
-                          width: 38,
-                          height: 38,
-                          borderRadius: 999,
-                          overflow: 'hidden',
-                          marginRight: 0,
-                        }}
-                      >
-                        {chain.iconUrl && (
-                          <img
-                            alt={chain.name ?? 'Chain icon'}
-                            src={chain.iconUrl}
-                            style={{ width: 38, height: 38 }}
-                          />
-                        )}
-                      </div>
-                    )}
-                    {/* {chain.name} */}
-                  </button>
-                  <button title='Click to view address' onClick={openAccountModal} type="button" className='bg-yellow-400 border-2 border-black text-black rounded-full px-3 py-1 shadow-xl transform transition duration-300 ease-in-out shadow-black/20 hover:-translate-y-1 hover:bg-yellow-200'>
-                    {/* {account.displayName} */}
+                  
+                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-black rounded-full px-3 py-1 transform transition '>
+                    <IoMdWallet className='text-2xl'/>
                     {account.displayBalance
                       ? ` ${account.displayBalance}`
                       : ''}
