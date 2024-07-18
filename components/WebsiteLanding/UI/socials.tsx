@@ -7,7 +7,9 @@ export const Socials = () => {
     <div className='bg-[#01534D] flex flex-col justify-start items-center'>
         <h2 className='text-[56px] text-[#F7DD81]' >Socials</h2>
 
-        <Image src={bg} alt='bg' />
+        <div className='max-md:object-cover max-md:overflow-hidden max-md:w-[28rem]'>
+          <Image src={bg} alt='bg' className='max-md:w-[28rem]'/>
+        </div>
     </div>
   )
 }
