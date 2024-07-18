@@ -13,7 +13,7 @@ export default function Home() {
       <Landing/>
       <Team/>
       <Socials/>
-      {/* <FootComp/> */}
+      <FootComp/>
     </main>
   );
 }
