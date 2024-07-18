@@ -14,7 +14,7 @@ export const StickerGen = () => {
     <div className='flex md:flex-row max-md:flex-col h-[95vh] w-screen '>
         <div className='md:h-full md:w-[33%] h-[33%] w-full bg-white/10 col-span-2'>
             <div id="traits" className='flex gap-2 w-full overflow-x-auto p-2 whitespace-nowrap'>
-                {traitArr.map((item, index) => (
+                {traitArr.map((item:string, index) => (
                     <button 
                         key={index}
                         className='bg-white/5 py-1 px-2 flex-shrink-0 w-[5rem] rounded-xl focus:bg-white/40 text-white border-[1px] border-white'
