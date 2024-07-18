@@ -11,8 +11,8 @@ export const StickerGen = () => {
     ]
 
   return (
-    <div className='flex flex-row h-[95vh] w-screen '>
-        <div className='h-full w-[33%] bg-white/10 col-span-2'>
+    <div className='flex md:flex-row max-md:flex-col h-[95vh] w-screen '>
+        <div className='md:h-full md:w-[33%] h-[33%] w-full bg-white/10 col-span-2'>
             <div id="traits" className='flex gap-2 w-full overflow-x-auto p-2 whitespace-nowrap'>
                 {traitArr.map((item, index) => (
                     <button 
@@ -24,12 +24,12 @@ export const StickerGen = () => {
                 ))}
             </div>
         </div>
-        <div className='w-[67%] items-center flex flex-col mt-5 gap-5 justify-start'>
+        <div className='md:h-full md:w-[67%] h-[67%] w-full items-center flex flex-col mt-5 gap-5 justify-start'>
             <h2 className='text-3xl'>Sticker Generator</h2>
-            <div className='w-[34rem] h-[34rem] border-[5px] rounded-xl border-dashed border-white/15'>
+            <div className='w-[19rem] h-[19rem] border-[5px] rounded-xl border-dashed border-white/15'>
                 
             </div>
-            <div className='flex gap-4 w-[55%] items-end justify-end'>
+            <div className='flex gap-4 md:w-[55%] items-end justify-end'>
                 <button className='bg-[#B7C660] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
                     <FaDice className='text-2xl'/>
                     Randomize
