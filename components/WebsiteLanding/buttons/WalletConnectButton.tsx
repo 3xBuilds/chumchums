@@ -5,7 +5,7 @@ import { IoMdWallet } from 'react-icons/io';
 
 export const WalletConnectButton = () => {
   return (
-    <div className='block'>
+    <div className='block text-white'>
     <ConnectButton.Custom>
       {({
         account,
@@ -39,7 +39,7 @@ export const WalletConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button" className='text-black font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
+                  <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
                     <IoMdWallet className='text-2xl'/>
                     Connect
                   </button>
@@ -47,7 +47,7 @@ export const WalletConnectButton = () => {
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button" className='text-black bg-red-500 hover:bg-red-400 font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
+                  <button onClick={openChainModal} type="button" className='text-white bg-red-500 hover:bg-red-400 font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
                     Wrong network
                   </button>
                 );
@@ -55,7 +55,7 @@ export const WalletConnectButton = () => {
               return (
                 <div style={{ display: 'flex', gap: 12 }}>
                   
-                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-black rounded-full px-3 py-1 transform transition '>
+                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-white rounded-full px-3 py-1 transform transition '>
                     <IoMdWallet className='text-2xl'/>
                     {account.displayBalance
                       ? ` ${account.displayBalance}`
