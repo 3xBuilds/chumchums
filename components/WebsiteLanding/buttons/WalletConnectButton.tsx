@@ -41,7 +41,7 @@ export const WalletConnectButton = () => {
                 return (
                   <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
                     <IoMdWallet className='text-2xl'/>
-                    Connect
+                    <h3 className='max-md:hidden'>Connect</h3>
                   </button>
                 );
               }
