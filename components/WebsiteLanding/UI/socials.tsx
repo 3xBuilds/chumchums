@@ -11,7 +11,7 @@ export const Socials = () => {
     <div id="socials" className='bg-[#01534D] flex flex-col justify-start items-center'>
         <h2 className='text-[56px] text-[#F7DD81]' >Socials</h2>
 
-        <div className='max-md:object-cover max-md:overflow-hidden max-sm:w-[30rem] max-[640px]:w-[40rem] relative max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[120rem] max-2xl:w-[150rem]'>
+        <div className='max-md:object-cover max-md:overflow-hidden max-sm:w-[30rem] max-[640px]:w-[40rem] relative max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[100rem] max-2xl:w-[140rem] 2xl:w-[170rem]'>
           <Image src={bg} alt='bg' className='max-sm:w-[30rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[65rem] lg:w-[100rem]'/>
             <a target='_blank' href="https://opensea.io/collection/chumchumsnft" className='hover:-translate-y-1 translate-y-0 w-fit h-fit duration-200 brightness-110 absolute max-sm:top-[10.4rem] max-sm:left-[5.65rem] max-md:top-[17.6rem] max-md:left-[9.6rem] max-lg:top-[22.8rem] max-lg:left-[12.5rem] lg:top-[36.8rem] lg:left-[20.7rem] z-[50] '><SiOpensea className='max-sm:text-[3rem] max-md:text-[4.5rem] md:text-[6rem] text-blue-500 hover:brightness-110 duration-200'/></a>
             <a target='_blank' href="https://x.com/chumchumsnft" className='hover:-translate-y-1 translate-y-0 w-fit h-fit duration-200 brightness-110 absolute max-sm:top-[10.7rem] max-sm:left-[14.5rem] max-md:top-[17.8rem] max-md:left-[24.1rem] max-lg:top-[23rem] max-lg:left-[31.3rem] lg:top-[36.8rem] lg:left-[49.5rem] z-[50] '><FaXTwitter className='max-sm:text-[2.5rem] max-md:text-[4rem] md:text-[5.5rem] text-black hover:brightness-110 duration-200'/></a>
