@@ -7,6 +7,7 @@ import { RiEmojiStickerFill } from "react-icons/ri";
 import { IoShareSocialSharp } from "react-icons/io5";
 import { RiTeamFill } from "react-icons/ri";
 import { usePathname, useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { GiHamburger, GiHamburgerMenu } from 'react-icons/gi';
 
 export const Navbar = () => {
@@ -16,47 +17,47 @@ export const Navbar = () => {
   return (
     <div className='fixed top-5 z-[100] flex items-center justify-center h-20 w-full '>
         <div className='max-md:hidden flex items-center gap-8'>
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <a target='_blank' href="https://opensea.io/collection/chumchumsnft" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <SiOpensea className='text-3xl'/>
                 Opensea
-            </button>
+            </a>
 
             <button onClick={()=>{router.push("/sticker")}} className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <RiEmojiStickerFill className='text-3xl'/>
                 Sticker Gen
             </button>
 
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <Link href="#socials" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <IoShareSocialSharp className='text-3xl'/>
                 Socials
-            </button>
+            </Link>
 
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <Link href="#team" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <RiTeamFill className='text-3xl'/>
                 Team
-            </button>
+            </Link>
 
             <WalletConnectButton/>
         </div>
         <div className='md:hidden flex gap-6'>
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <a target='_blank' href="https://opensea.io/collection/chumchumsnft" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <SiOpensea className='text-3xl'/>
                 
-            </button>
+            </a>
 
             <button onClick={()=>{router.push("/sticker")}} className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <RiEmojiStickerFill className='text-3xl'/>
             </button>
 
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <Link href="#socials" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <IoShareSocialSharp className='text-3xl'/>
                 
-            </button>
+            </Link>
 
-            <button className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
+            <Link href="#team" className='flex items-center justify-center gap-2 text-lg hover:-translate-y-1 duration-200'>
                 <RiTeamFill className='text-3xl'/>
                 
-            </button>
+            </Link>
 
             <WalletConnectButton/>
         </div>

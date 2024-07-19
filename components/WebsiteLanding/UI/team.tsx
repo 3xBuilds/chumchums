@@ -52,7 +52,7 @@ export const Team = () => {
   }
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-[#01534D] w-screen py-20'>
+    <div id='team' className='min-h-screen flex flex-col items-center justify-center bg-[#01534D] w-screen py-20'>
       <h2 className='text-[56px] text-[#F7DD81]' >Team</h2>
         <div className='flex flex-wrap gap-5 items-center justify-center w-[80%]' >
           {teamArr.map((item:Proptypes)=>(
