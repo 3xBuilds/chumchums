@@ -26,7 +26,7 @@ export const StickerGen = () => {
         </div>
         <div className='md:h-full md:w-[67%] h-[67%] w-full items-center flex flex-col mt-5 gap-5 justify-start'>
             <h2 className='text-3xl'>Sticker Generator</h2>
-            <div className='w-[19rem] h-[19rem] border-[5px] rounded-xl border-dashed border-white/15'>
+            <div className='max-md:w-[19rem] max-md:h-[19rem] md:w-[32rem] md:h-[32rem] border-[5px] rounded-xl border-dashed border-white/15'>
                 
             </div>
             <div className='flex gap-4 md:w-[55%] items-end justify-end'>
