@@ -99,38 +99,38 @@ export const StickerGen:React.FC = () => {
             <h2 className='text-3xl'>Sticker Generator</h2>
             <div id='capture' ref={layeredImageRef} className='max-md:w-[19rem] relative max-md:h-[19rem] overflow-hidden md:w-[32rem] md:h-[32rem] border-[5px] rounded-xl border-dashed border-white/15'>
                 
-                    <Image 
-                    src={(selectedTrait5==12 || selectedTrait5 == 13) ? require(`../../../assets/StickerGenerator/trait_layers/5/${selectedTrait5+1}.gif`): require(`../../../assets/StickerGenerator/trait_layers/5/${selectedTrait5+1}.png`)}
+                    <img 
+                    src={(selectedTrait5==12 || selectedTrait5 == 13) ? require(`../../../assets/StickerGenerator/trait_layers/5/${selectedTrait5+1}.gif`).default.src: require(`../../../assets/StickerGenerator/trait_layers/5/${selectedTrait5+1}.png`).default.src}
                     alt="Background" 
                     className='w-full absolute z-0'
                     style={{width:"100%", height:"100%"}}
                     />
-                    <Image 
-                    src={require(`../../../assets/StickerGenerator/trait_layers/0/1.png`)}
+                    <img 
+                    src={require(`../../../assets/StickerGenerator/trait_layers/0/1.png`).default.src}
                     alt="Outline" 
                     className='w-screen absolute z-1'
                     style={{width:"100%", height:"100%"}}
                     />
-                    <Image 
-                    src={require(`../../../assets/StickerGenerator/trait_layers/1/${selectedTrait1+1}.png`)} 
+                    <img 
+                    src={require(`../../../assets/StickerGenerator/trait_layers/1/${selectedTrait1+1}.png`).default.src} 
                     alt="Head" 
                     className='w-full absolute z-2' 
                     style={{width:"100%", height:"100%"}}
                     />
-                    <Image 
-                    src={require(`../../../assets/StickerGenerator/trait_layers/2/${selectedTrait2+1}.png`)} 
+                    <img 
+                    src={require(`../../../assets/StickerGenerator/trait_layers/2/${selectedTrait2+1}.png`).default.src} 
                     alt="Body" 
                     className='w-full absolute z-3' 
                     style={{width:"100%", height:"100%"}}
                     />
-                    <Image 
-                    src={require(`../../../assets/StickerGenerator/trait_layers/3/${selectedTrait3+1}.png`)} 
+                    <img 
+                    src={require(`../../../assets/StickerGenerator/trait_layers/3/${selectedTrait3+1}.png`).default.src} 
                     alt="Face" 
                     className='w-full absolute z-4'
                     style={{width:"100%", height:"100%"}} 
                     />
-                    <Image 
-                    src={require(`../../../assets/StickerGenerator/trait_layers/4/${selectedTrait4+1}.png`)} 
+                    <img 
+                    src={require(`../../../assets/StickerGenerator/trait_layers/4/${selectedTrait4+1}.png`).default.src} 
                     alt="Chum" 
                     className='w-full absolute z-5' 
                     style={{width:"100%", height:"100%"}}
