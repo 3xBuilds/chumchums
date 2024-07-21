@@ -71,11 +71,11 @@ export const StickerGen:React.FC = () => {
     },[selectedType])
 
     function randomize(){
-        setSelectedTrait1(Math.round(amount[1]*Math.random()));
-        setSelectedTrait2(Math.round(amount[2]*Math.random()));
-        setSelectedTrait3(Math.round(amount[3]*Math.random()));
-        setSelectedTrait4(Math.round(amount[4]*Math.random()));
-        setSelectedTrait5(Math.round(amount[5]*Math.random()));
+        setSelectedTrait1(Math.floor(amount[1]*Math.random()));
+        setSelectedTrait2(Math.floor(amount[2]*Math.random()));
+        setSelectedTrait3(Math.floor(amount[3]*Math.random()));
+        setSelectedTrait4(Math.floor(amount[4]*Math.random()));
+        setSelectedTrait5(Math.floor(amount[5]*Math.random()));
 
     }
       
