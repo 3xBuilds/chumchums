@@ -74,12 +74,12 @@ export const StickerGen:React.FC = () => {
   return (
     <div className='flex md:flex-row max-md:flex-col h-[95vh] w-screen max-md:overflow-x-hidden md:overflow-y-hidden'>
         <div className='md:h-full md:w-[33%] h-[33%] w-full flex flex-col justify-center gap-4 bg-white/10 col-span-2'>
-            <div id="traits" className='flex gap-2 w-full py-2 overflow-x-auto items-center justify-start p-2 whitespace-nowrap'>
+            <div id="traits" className='flex gap-2 w-full py-2 overflow-x-auto overflow-y-hidden items-center justify-start p-2 whitespace-nowrap'>
                 {traitArr.map((item:string, index) => (
                     <button 
                         onClick={()=>{ setDisplayArr([]); setSelectedType(index)}}
                         key={index}
-                        className='bg-white/5 py-1 px-2 hover:bg-white/30 duration-200 flex-shrink-0 w-[10rem] rounded-xl focus:bg-white/40 text-white border-[1px] border-white'
+                        className={`${selectedType==index ? "bg-white/40" : "bg-white/5"} py-1 px-2 hover:bg-white/30 duration-200 flex-shrink-0 w-[10rem] rounded-xl text-white border-[1px] border-white`}
                     >
                         {item}
                     </button>
