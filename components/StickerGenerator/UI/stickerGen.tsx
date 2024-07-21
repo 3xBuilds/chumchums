@@ -7,7 +7,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import html2canvas from 'html2canvas';
 
-
 export const StickerGen:React.FC = () => {
 
     const layeredImageRef = useRef<HTMLDivElement>(null);
@@ -55,12 +54,13 @@ export const StickerGen:React.FC = () => {
         // @ts-ignore
         const canvas = await html2canvas(document.getElementById("capture"));
       
-        const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        
-        const link = document.createElement('a');
-        link.download = 'layered_image.png';
-        link.href = image;
-        link.click();
+        if(selectedTrait5 != 12 && selectedTrait5 != 13){
+            const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            const link = document.createElement('a');
+            link.download = 'layered_image.png';
+            link.href = image;
+            link.click();
+        }
       };
 
     useEffect(()=>{
@@ -73,11 +73,11 @@ export const StickerGen:React.FC = () => {
 
   return (
     <div className='flex md:flex-row max-md:flex-col h-[95vh] w-screen max-md:overflow-x-hidden md:overflow-y-hidden'>
-        <div className='md:h-full md:w-[33%] h-[33%] w-full flex flex-col justify-center gap-4 bg-white/10 col-span-2'>
+        <div className='md:h-full md:w-[33%] h-[33%] w-full flex flex-col justify-center gap-2 bg-white/10 col-span-2'>
             <div id="traits" className='flex gap-2 w-full py-2 overflow-x-auto overflow-y-hidden items-center justify-start p-2 whitespace-nowrap'>
                 {traitArr.map((item:string, index) => (
                     <button 
-                        onClick={()=>{ setDisplayArr([]); setSelectedType(index)}}
+                        onClick={()=>{ if(index != selectedType)setDisplayArr([]); setSelectedType(index)}}
                         key={index}
                         className={`${selectedType==index ? "bg-white/40" : "bg-white/5"} py-1 px-2 hover:bg-white/30 duration-200 flex-shrink-0 w-[10rem] rounded-xl text-white border-[1px] border-white`}
                     >
@@ -85,7 +85,7 @@ export const StickerGen:React.FC = () => {
                     </button>
                 ))}
             </div>
-            <div className='overflow-x-scroll w-full max-md:h-40 h-full'>
+            <div className='overflow-x-scroll overflow-y-hidden w-full max-md:h-48 h-full'>
                 <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
                     {displayArr?.length != 0 && displayArr.map((item:number)=>(
                         <button onClick={()=>{if(selectedType==0)setSelectedTrait0(item); if(selectedType==1)setSelectedTrait1(item);if(selectedType==2)setSelectedTrait2(item);if(selectedType==3)setSelectedTrait3(item);if(selectedType==4)setSelectedTrait4(item);if(selectedType==5)setSelectedTrait5(item);}} className='flex cursor-pointer items-center justify-center w-40 h-40 bg-white/10 rounded-xl gap-5' >
