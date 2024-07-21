@@ -94,7 +94,7 @@ export const StickerGen:React.FC = () => {
                     </button>
                 ))}
             </div>
-            <div className='overflow-x-scroll overflow-y-hidden w-full max-md:h-48 h-full'>
+            <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                 <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
                     {displayArr?.length != 0 && displayArr.map((item:number)=>(
                         <button onClick={()=>{if(selectedType==0)setSelectedTrait0(item); if(selectedType==1)setSelectedTrait1(item);if(selectedType==2)setSelectedTrait2(item);if(selectedType==3)setSelectedTrait3(item);if(selectedType==4)setSelectedTrait4(item);if(selectedType==5)setSelectedTrait5(item);}} className='flex cursor-pointer items-center justify-center w-40 h-40 bg-white/10 rounded-xl gap-5' >
