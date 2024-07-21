@@ -69,6 +69,15 @@ export const StickerGen:React.FC = () => {
         // console.log(arr);
         setDisplayArr(arr);
     },[selectedType])
+
+    function randomize(){
+        setSelectedTrait1(Math.round(amount[1]*Math.random()));
+        setSelectedTrait2(Math.round(amount[2]*Math.random()));
+        setSelectedTrait3(Math.round(amount[3]*Math.random()));
+        setSelectedTrait4(Math.round(amount[4]*Math.random()));
+        setSelectedTrait5(Math.round(amount[5]*Math.random()));
+
+    }
       
 
   return (
@@ -138,7 +147,7 @@ export const StickerGen:React.FC = () => {
 
             </div>
             <div className='flex gap-4 md:w-[55%] items-end justify-end'>
-                <button className='bg-[#B7C660] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
+                <button onClick={randomize} className='bg-[#B7C660] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
                     <FaDice className='text-2xl'/>
                     Randomize
                 </button>
