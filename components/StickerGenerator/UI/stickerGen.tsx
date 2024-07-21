@@ -57,7 +57,7 @@ export const StickerGen:React.FC = () => {
         if(selectedTrait5 != 12 && selectedTrait5 != 13){
             const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
             const link = document.createElement('a');
-            link.download = 'layered_image.png';
+            link.download = 'chum.png';
             link.href = image;
             link.click();
         }
