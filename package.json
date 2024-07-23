@@ -14,6 +14,7 @@
     "@types/gif.js": "^0.2.5",
     "axios": "^1.7.2",
     "ethers": "^5.7.2",
+    "gif-frames": "^1.0.1",
     "gif.js": "^0.2.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
