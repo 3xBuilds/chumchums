@@ -2,6 +2,8 @@
 
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { IoMdWallet } from 'react-icons/io';
+import wallet from "@/assets/WebsiteLanding/logos/wallet.png"
+import Image from 'next/image';
 
 export const WalletConnectButton = () => {
   return (
@@ -39,15 +41,15 @@ export const WalletConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
-                    <IoMdWallet className='text-2xl'/>
+                  <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center flex-col gap-2'>
+                    <Image src={wallet} alt="stickerGen" className='w-10'/>
                     <h3 className='max-md:hidden'>Connect</h3>
                   </button>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button" className='text-white bg-red-500 hover:bg-red-400 font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center gap-2'>
+                  <button onClick={openChainModal} type="button" className='text-white bg-red-500 hover:bg-red-400 font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex-col flex items-center justify-center gap-2'>
                     Wrong network
                   </button>
                 );
@@ -55,8 +57,8 @@ export const WalletConnectButton = () => {
               return (
                 <div style={{ display: 'flex', gap: 12 }}>
                   
-                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-white rounded-full px-3 py-1 transform transition '>
-                    <IoMdWallet className='text-2xl'/>
+                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex flex-col font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-white rounded-full max-md:text-md text-sm px-3 py-1 transform transition '>
+                    <Image src={wallet} alt="stickerGen" className='w-10'/>
                     {account.displayBalance
                       ? ` ${account.displayBalance}`
                       : ''}

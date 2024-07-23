@@ -12,6 +12,12 @@ export const Team = () => {
 
   const teamArr = [
     {
+      name: "Simple Cat",
+      post: "Artist",
+      pic: simplecat,
+      twitter: "https://x.com/simplecatnft"
+    },
+    {
       name: "Muchacho Major",
       post: "CEO",
       pic: muchacho,
@@ -31,15 +37,9 @@ export const Team = () => {
     },
     {
       name: "Cleofis",
-      post: "CLEO",
+      post: "c l e o",
       pic: cleofis,
       twitter: "https://x.com/thiscleofis"
-    },
-    {
-      name: "Simple Cat",
-      post: "Artist",
-      pic: simplecat,
-      twitter: "https://x.com/simplecatnft"
     }
     
   ]

@@ -2,6 +2,7 @@ import React from 'react'
 // import footerbg from "@/assets/WebsiteLanding/footer/footerbg.jpg"
 import Image from 'next/image'
 import meow from "@/assets/WebsiteLanding/footer/meow.png"
+import logoC from "@/assets/WebsiteLanding/logos/chumlogoC.png"
 
 export const FootComp = () => {
   return (
@@ -27,7 +28,7 @@ export const FootComp = () => {
       </div>
 
       <div className='h-full flex items-end md:w-[36%] justify-center my-10'>
-        <h6>All Rights Reserved by ChumChums ©</h6>
+        <h6 className='flex flex-col items-center justify-center gap-2'>All Rights Reserved by <span><Image className='w-60' src={logoC} alt="alt"/></span></h6>
       </div>
 
       <div className='flex items-center justify-end md:w-[30%]' >

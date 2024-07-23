@@ -151,7 +151,7 @@ export const StickerGen: React.FC = () => {
                 </div>
             </div>
             <div className='md:h-full md:w-[67%] h-[67%] w-full items-center flex flex-col mt-5 gap-5 justify-start'>
-                <h2 className='text-3xl'>Sticker Generator</h2>
+                <h2 className='text-3xl'>Chum Generator <span className='text-[#F7DD81]' >3000</span></h2>
                 <div id='capture' ref={layeredImageRef} className='max-md:w-[19rem] relative max-md:h-[19rem] overflow-hidden md:w-[32rem] md:h-[32rem] border-[5px] rounded-xl border-dashed border-white/15'>
 
                     <img
