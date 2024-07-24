@@ -46,8 +46,8 @@ export const StickerGen: React.FC = () => {
             const height = captureElement.offsetHeight;
     
             const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width = 512;
+            canvas.height = 512;
             const ctx = canvas.getContext('2d');
     
             if (!ctx) {
