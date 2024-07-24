@@ -9,7 +9,7 @@ import { IoLogoMedium, IoLogoTiktok } from 'react-icons/io5';
 export const Socials = () => {
   return (
     <div id="socials" className='bg-[#01534D] flex flex-col justify-start items-center'>
-        <h2 className='text-[56px] text-[#F7DD81]' >Socials</h2>
+        <h2 className='text-[56px] text-[#e7b34e]' >Socials</h2>
 
         <div className='max-md:object-cover max-md:overflow-hidden max-[640px]:w-[30rem] relative max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[80rem]  max-2xl:w-[100rem] 2xl:w-[120rem]'>
           <Image src={bg} alt='bg' className='max-[640px]:w-[30rem] max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[80rem] max-2xl:w-[100rem] 2xl:w-[120rem]'/>
