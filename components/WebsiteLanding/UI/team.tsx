@@ -53,7 +53,7 @@ export const Team = () => {
   }
 
   return (
-    <div id='team' className='min-h-screen flex flex-col items-center justify-center bg-[#01534D] w-screen py-20'>
+    <div id='team' className='min-h-screen flex flex-col items-center justify-center bg-[#01534D] w-screen pt-56 pb-20'>
       <h2 className='text-[56px] text-[#e7b34e] relative'>
         <Image className='absolute -top-[0.9rem] -left-[0.6rem] w-12' alt='bot' src={teambot} /> Team
       </h2>
