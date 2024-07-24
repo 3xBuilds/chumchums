@@ -4,13 +4,14 @@ import Image from 'next/image'
 import { SiOpensea } from "react-icons/si";
 import { FaXTwitter } from 'react-icons/fa6';
 import { IoLogoMedium, IoLogoTiktok } from 'react-icons/io5';
-
+import ufo from "@/assets/WebsiteLanding/logos/socialsufo.png"
 
 export const Socials = () => {
   return (
     <div id="socials" className='bg-[#01534D] flex flex-col justify-start items-center'>
-        <h2 className='text-[56px] text-[#e7b34e]' >Socials</h2>
-
+        <h2 className='text-[56px] text-[#e7b34e] relative' >
+          <Image className='absolute left-[40%] bottom-16 w-10 z-50' alt='ufo' src={ufo} /> Socials
+        </h2>
         <div className='max-md:object-cover max-md:overflow-hidden max-[640px]:w-[30rem] relative max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[80rem]  max-2xl:w-[100rem] 2xl:w-[120rem]'>
           <Image src={bg} alt='bg' className='max-[640px]:w-[30rem] max-md:w-[50rem] max-lg:w-[65rem] max-xl:w-[80rem] max-2xl:w-[100rem] 2xl:w-[120rem]'/>
             <a target='_blank' href="https://opensea.io/collection/chumchumsnft" className='hover:-translate-y-1 translate-y-0 w-fit h-fit duration-200 brightness-110 absolute max-sm:top-[10.4rem] max-sm:left-[5.7rem] max-md:top-[17.6rem] max-md:left-[9.6rem] max-lg:top-[22.8rem] max-lg:left-[12.5rem] max-xl:top-[28.7rem] max-xl:left-[16rem] max-2xl:top-[36.6rem] max-2xl:left-[20.7rem] 2xl:top-[44.5rem] 2xl:left-[25.5rem] z-[50] '><SiOpensea className='max-sm:text-[3rem] max-md:text-[4.5rem] md:text-[6rem] text-blue-500 hover:brightness-110 duration-200'/></a>
