@@ -31,7 +31,7 @@ export const Landing = () => {
           <Image src={arr[bg]} alt='hi' />
         </div>
         <div className="overflow-hidden absolute inset-0">
-          <div id="shade" className='bg-[#000000]/70 absolute top-64 blur-[100px] w-[120rem] md:-left-[20%] h-full rounded-full'>
+          <div id="shade" className='bg-[#000000]/70 absolute top-64 blur-[100px] w-[140vw] md:-left-[20%] h-full rounded-full'>
           </div>
         </div>
 
