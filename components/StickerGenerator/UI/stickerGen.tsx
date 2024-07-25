@@ -42,12 +42,14 @@ export const StickerGen: React.FC = () => {
 
     const captureSnapshot = (captureElement: HTMLElement): Promise<string> => {
         return new Promise((resolve, reject) => {
+
             const width = captureElement.offsetWidth;
             const height = captureElement.offsetHeight;
     
             const canvas = document.createElement('canvas');
             canvas.width = 512;
             canvas.height = 512;
+
             const ctx = canvas.getContext('2d');
     
             if (!ctx) {
@@ -150,9 +152,49 @@ export const StickerGen: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className='md:h-full md:w-[67%] h-[67%] w-full items-center flex flex-col mt-5 gap-5 justify-start'>
+            <div className='md:h-full md:w-[67%] w-full items-center flex flex-col mt-5 gap-5 justify-start'>
                 <h2 className='text-3xl'>Chum Generator <span className='text-[#e7b34e]' >3000</span></h2>
-                <div id='capture' ref={layeredImageRef} className='max-md:w-[19rem] relative max-md:h-[19rem] overflow-hidden md:w-[32rem] md:h-[32rem] border-[5px] rounded-xl border-dashed border-white/15'>
+                <div id='capture' ref={layeredImageRef} className='w-[512px] h-[512px] max-md:absolute max-md:-left-[32rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
+
+                    <img
+                        src={(selectedTrait5 == 12 || selectedTrait5 == 13) ? `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.gif` : `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
+                        alt="Background"
+                        className='w-full absolute z-0'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+                    <img
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/0/1.png`}
+                        alt="Outline"
+                        className='w-screen absolute z-1'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+                    <img
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/1/${selectedTrait1 + 1}.png`}
+                        alt="Head"
+                        className='w-full absolute z-2'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+                    <img
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/2/${selectedTrait2 + 1}.png`}
+                        alt="Body"
+                        className='w-full absolute z-3'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+                    <img
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/3/${selectedTrait3 + 1}.png`}
+                        alt="Face"
+                        className='w-full absolute z-4'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+                    <img
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/4/${selectedTrait4 + 1}.png`}
+                        alt="Chum"
+                        className='w-full absolute z-5'
+                        style={{ width: "512px", height: "512px" }}
+                    />
+
+                </div>
+                <div className='w-[19rem] h-[19rem] md:hidden relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                     <img
                         src={(selectedTrait5 == 12 || selectedTrait5 == 13) ? `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.gif` : `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
