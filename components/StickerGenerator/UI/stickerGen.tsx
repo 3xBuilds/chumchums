@@ -23,7 +23,7 @@ export const StickerGen: React.FC = () => {
         "Outline", "Head", "Body", "Face", "Chum", "Back Ground"
     ]
 
-    const amount = [1, 76, 71, 23, 87, 14];
+    const amount = [1, 76, 71, 23, 87, 12];
 
     const waitForImagesLoaded = async (element: HTMLElement) => {
         const images = element.getElementsByTagName('img');
@@ -146,7 +146,7 @@ export const StickerGen: React.FC = () => {
                     <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
                         {displayArr?.length != 0 && displayArr.map((item: number) => (
                             <button onClick={() => { if (selectedType == 1) setSelectedTrait1(item); if (selectedType == 2) setSelectedTrait2(item); if (selectedType == 3) setSelectedTrait3(item); if (selectedType == 4) setSelectedTrait4(item); if (selectedType == 5) setSelectedTrait5(item); }} className='flex cursor-pointer items-center justify-center w-40 h-40 bg-white/10 rounded-xl gap-5' >
-                                <img className='rounded-xl' src={selectedType == 5 && (item == 12 || item == 13) ? `https://dulk39g224roa.cloudfront.net/trait_layers/${selectedType}/${item + 1}.gif` : `https://dulk39g224roa.cloudfront.net/trait_layers/${selectedType}/${item + 1}.png`} alt={String(item)} />
+                                <img className='rounded-xl' src={`https://dulk39g224roa.cloudfront.net/trait_layers/${selectedType}/${item + 1}.png`} alt={String(item)} />
                             </button>
                         ))}
                     </div>
@@ -157,7 +157,7 @@ export const StickerGen: React.FC = () => {
                 <div id='capture' ref={layeredImageRef} className='w-[512px] h-[512px] max-md:absolute max-md:-left-[32rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                     <img
-                        src={(selectedTrait5 == 12 || selectedTrait5 == 13) ? `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.gif` : `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
                         alt="Background"
                         className='w-full absolute z-0'
                         style={{ width: "512px", height: "512px" }}
@@ -197,7 +197,7 @@ export const StickerGen: React.FC = () => {
                 <div className='w-[19rem] h-[19rem] md:hidden relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                     <img
-                        src={(selectedTrait5 == 12 || selectedTrait5 == 13) ? `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.gif` : `https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
+                        src={`https://dulk39g224roa.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
                         alt="Background"
                         className='w-full absolute z-0'
                         style={{ width: "100%", height: "100%" }}

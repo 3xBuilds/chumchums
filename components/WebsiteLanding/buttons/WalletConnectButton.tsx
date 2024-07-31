@@ -41,7 +41,7 @@ export const WalletConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center flex-col gap-2'>
+                  <button onClick={openConnectModal} type="button" className='text-white font-bold rounded-full hover:-translate-y-1 px-3 py-1 transform transition duration-200 ease-in-out flex items-center justify-center flex-col gap-0'>
                     <Image src={wallet} alt="stickerGen" className='w-10'/>
                     <h3 className='max-md:hidden'>Connect</h3>
                   </button>
@@ -57,7 +57,7 @@ export const WalletConnectButton = () => {
               return (
                 <div style={{ display: 'flex', gap: 12 }}>
                   
-                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex flex-col font-bold hover:-translate-y-1 duration-200 items-center gap-2 justify-center text-white rounded-full max-md:text-md text-sm px-3 py-1 transform transition '>
+                  <button title='Click to view address' onClick={openAccountModal} type="button" className='flex flex-col font-bold hover:-translate-y-1 duration-200 items-center gap-0 justify-center text-white rounded-full max-md:text-md text-sm px-3 py-1 transform transition '>
                     <Image src={wallet} alt="stickerGen" className='w-10'/>
                     {account.displayBalance
                       ? ` ${account.displayBalance}`
