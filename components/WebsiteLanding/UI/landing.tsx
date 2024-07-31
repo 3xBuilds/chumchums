@@ -27,16 +27,17 @@ export const Landing = () => {
   const router = useRouter()
 
   return (
-    <div className='flex items-end justify-center bg-[#242326] overflow-x-hidden object-contain min-h-screen max-md:object-cover max-md:overflow-hidden max-sm:w-[38rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[70rem] max-xl:w-[90rem] max-2xl:w-[110rem] 2xl:w-[145rem]' >
+    <div className='flex items-end justify-center bg-[#242326] overflow-hidden object-contain min-h-screen max-md:object-cover max-md:overflow-hidden max-sm:w-[38rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[70rem] max-xl:w-[90rem] max-2xl:w-[110rem] 2xl:w-[145rem]' >
         <div>
           <button onClick={()=>{if(bg == arr.length - 1)setBg(0); else{setBg(prev => prev+1)}}} className='text-white absolute z-[100] right-0 top-[45%]'><IoIosArrowForward className='text-[4rem]'/></button>
           <button onClick={()=>{if(bg == 0)setBg(arr.length-1); else{setBg(prev => prev-1)}}} className='text-white absolute z-[100] left-0 rotate-180 top-[45%]'><IoIosArrowForward className='text-[4rem]'/></button>
         </div>
 
+
+        <div className="overflow-hidden absolute inset-0">
         <div className='absolute max-md:bottom-0 h-full max-md:w-[50rem] overflow-hidden'>
           <Image src={arr[bg]} alt='hi' />
         </div>
-        <div className="overflow-hidden absolute inset-0">
           <div id="shade" className='bg-[#000000]/70 absolute max-md:h-[150vh] max-md:top-52 md:top-64 blur-[100px] md:w-[140vw] max-md:w-[120rem] md:-left-[20%] max-md:-left-[90%] h-full rounded-full'>
           </div>
         </div>
