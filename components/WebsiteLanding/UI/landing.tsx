@@ -42,7 +42,7 @@ export const Landing = () => {
           </div>
         </div>
 
-        <div className='absolute md:top-[30%] top-[30%] z-50 w-full text-center flex items-center flex-col justify-center gap-2'>
+        <div className='absolute md:top-[30%] max-lg:top-[30%] lg:top-[25%] z-50 w-full text-center flex items-center flex-col justify-center gap-2'>
           <Image src={chumlogo} alt='logo' className=' max-md:w-[95%] md:w-[60%] mb-5' />
           {/* <div className='bg-[#e9b54d] w-[95%] h-52 rounded-xl border-8 border-black shadow-inner shadow-black/50'>
 
@@ -60,7 +60,7 @@ export const Landing = () => {
           </a> */}
 
         </div>
-        <div className='absolute z-[5] md:-bottom-72'>
+        <div className='absolute z-[5] md:-bottom-72 '>
           <Image src={landingBg} alt='bg1' className='max-sm:w-[38rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[70rem] max-xl:w-[90rem] max-2xl:w-[110rem] 2xl:w-[145rem]'/>
         </div>
     </div>
