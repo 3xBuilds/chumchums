@@ -35,8 +35,8 @@ export const Landing = () => {
 
 
         <div className="overflow-hidden absolute inset-0">
-        <div className='absolute max-md:bottom-0 h-full max-md:w-[50rem] overflow-hidden'>
-          <Image src={arr[bg]} alt='hi' />
+        <div className='absolute max-md:bottom-0 max-md:w-[80rem] max-lg:w-[100rem] max-xl:w-[110rem] max-2xl:w-[130rem] 2xl:w-[170rem] md:min-h-screen overflow-hidden'>
+          <Image src={arr[bg]} alt='hi' className='w-full h-full' />
         </div>
           <div id="shade" className='bg-[#000000]/70 absolute max-md:h-[150vh] max-md:top-52 md:top-64 blur-[100px] md:w-[140vw] max-md:w-[120rem] md:-left-[20%] max-md:-left-[90%] h-full rounded-full'>
           </div>
@@ -60,8 +60,8 @@ export const Landing = () => {
           </a> */}
 
         </div>
-        <div className='absolute z-[5] md:-bottom-72 '>
-          <Image src={landingBg} alt='bg1' className='max-sm:w-[38rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[70rem] max-xl:w-[90rem] max-2xl:w-[110rem] 2xl:w-[145rem]'/>
+        <div className='relative z-[5] '>
+          <Image src={landingBg} alt='bg1' className='max-sm:w-[38rem] max-[640px]:w-[45rem] max-md:w-[50rem] max-lg:w-[70rem] max-xl:w-[90rem] max-2xl:w-[110rem] 2xl:w-[160rem]'/>
         </div>
     </div>
   )
