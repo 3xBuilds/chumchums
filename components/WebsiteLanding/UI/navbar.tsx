@@ -38,7 +38,7 @@ export const Navbar = () => {
 
   return (
     <div className='fixed top-5 z-[100] flex items-center justify-center h-20 w-full '>
-        <div id="movingDiv" className='-translate-y-[20rem] max-md:-translate-y-[20rem] max-md:w-[90%] z-[1000000] duration-300 absolute flex items-center justify-center max-md:flex-col gap-8 bg-black/20 max-md:rounded-xl md:rounded-full backdrop-blur-2xl px-8 py-4'>
+        <div id="movingDiv" className='-translate-y-[20rem] max-md:-translate-y-[20rem] max-md:w-[90%] z-[1000000] duration-300 absolute flex items-center justify-center max-md:flex-col gap-8 bg-black/50 border-2 border-black max-md:rounded-xl md:rounded-full px-8 py-2'>
             <div className='w-full flex items-end justify-end'>
                 <button onClick={removeDiv} className='hover:text-red-500 text-white duration-300'><ImCross/>
                     </button>
