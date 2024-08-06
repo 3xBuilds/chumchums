@@ -88,13 +88,13 @@ export const NftFetcher = () => {
         <h2 className='text-[56px] text-[#e7b34e] relative mb-10'>Collection</h2>
        </div>
         <div className='w-full'>
-            <div className='flex max-md:flex-col bg-[#d0d570]/20 py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
+            <div className='flex bg-[#d0d570]/20 py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
                 
                 <div className='absolute h-full w-[150rem] md:w-[90rem] overflow-hidden object-cover'>
                     <Image src={bg} alt='hello' className='w-[150rem] h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
                 </div>
 
-                <button onClick={()=>{if(index==0){setIndex(19)} else{setIndex(prev => prev-1)}}} className="text-5xl mx-auto max-md:rotate-90 bg-transparent hover:bg-white/30 p-2 rounded-full duration-200" ><IoIosArrowBack/></button>
+                <button onClick={()=>{if(index==0){setIndex(19)} else{setIndex(prev => prev-1)}}} className="text-5xl max-md:absolute left-0 top-[11.5rem] max-md:bg-black/20 z-10 mx-auto bg-transparent hover:bg-white/30 p-2 rounded-full duration-200" ><IoIosArrowBack/></button>
                 {data.map((item, i)=>(
                     <>
                         { i == index && <div className='flex max-md:flex-col relative z-[1] gap-8 w-[100%] px-4'>
@@ -128,7 +128,7 @@ export const NftFetcher = () => {
                     </>
                     
                 ))}
-                <button onClick={()=>{if(index!=20){setIndex(prev => prev+1)} else{setIndex(0)}}} className="text-5xl bg-transparent hover:bg-white/30 max-md:rotate-[270deg] mx-auto p-2 rounded-full duration-200 rotate-180" ><IoIosArrowBack/></button>
+                <button onClick={()=>{if(index!=20){setIndex(prev => prev+1)} else{setIndex(0)}}} className="text-5xl bg-transparent max-md:absolute right-0 top-[11.5rem] max-md:bg-black/20 z-10 hover:bg-white/30 mx-auto p-2 rounded-full duration-200 rotate-180" ><IoIosArrowBack/></button>
             </div>
 
         </div>
