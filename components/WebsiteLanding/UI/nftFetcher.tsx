@@ -91,7 +91,7 @@ export const NftFetcher = () => {
             <div className='flex max-md:flex-col bg-[#d0d570]/20 py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
                 
                 <div className='absolute h-full w-[150rem] md:w-[90rem] overflow-hidden object-cover'>
-                    <Image src={bg} alt='hello' className='w-[150rem] max-md:h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
+                    <Image src={bg} alt='hello' className='w-[150rem] h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
                 </div>
 
                 <button onClick={()=>{if(index==0){setIndex(19)} else{setIndex(prev => prev-1)}}} className="text-5xl mx-auto max-md:rotate-90 bg-transparent hover:bg-white/30 p-2 rounded-full duration-200" ><IoIosArrowBack/></button>
