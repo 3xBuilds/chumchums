@@ -26,7 +26,8 @@ export const NftFetcher = () => {
         owner: string,
         img: string,
         tokenId: number,
-        attributeArr: Array<Obj>
+        attributeArr: Array<Obj>,
+        rank: string
     }
 
     const[tokenId, setTokenId] = useState<number>(0);
@@ -55,15 +56,30 @@ export const NftFetcher = () => {
 
             for(let i = 0; i<20; i++){
                 const tokenId = Math.floor(5699*Math.random());
+                const apiKey = 'c215462643ba44cdafabd7ac769a4e1b'; 
                 const owner = await contract?.ownerOf(tokenId);
                 const img = "https://gateway.pinata.cloud/ipfs/QmXcSqfgLDPWaZBxrM3fxWenaE9nTDQGGtC59twFsphf92/"+tokenId+".png"
 
                 const res = await axios.get("https://gateway.pinata.cloud/ipfs/Qmem6x3tee8t1thwaCzcFi5DjaZHkHwJniceizdMTmmVfh/"+tokenId);
                 
-                
+                const opensea = await axios.get(
+                "https://api.opensea.io/api/v2/chain/ethereum/contract/0xe987E9b07cA431FE0C7e8f431FA4F94ab9CA2423/nfts/"+tokenId,
+                {
+                    headers: {
+                    'x-api-key': apiKey
+                    }
+                }
+                );
+
+                console.log(opensea);
+
+                const rank = String(opensea.data.nft.rarity.rank);
+                  
+                  
                 const attributeArr = res.data.attributes;
 
-                setData(oldArr => [...oldArr, {owner, img, tokenId, attributeArr}])
+
+                setData(oldArr => [...oldArr, {owner, img, tokenId, attributeArr, rank}])
             }
             
         }
@@ -107,9 +123,13 @@ export const NftFetcher = () => {
                                 <h3 className='text-[#d0d570] text-xl md:text-2xl text-nowrap' >Owned By: <span className='truncate text-white'>{item.owner.substring(0,5)}...{item.owner.substring(item.owner.length-6, item.owner.length)}</span></h3>
                                 
                                 <div className='flex flex-wrap gap-2 items-center justify-start max-md:justify-center'>
+                                    <div className='border-[#d0d570] text-center bg-[#000000]/30 w-40 py-2 rounded-xl border-2'>
+                                                <h3 className='text-[#d0d570] text-md text-bold'>Rank</h3>
+                                                <h3 className='text-white text-sm text-semibold'>{item.rank}</h3>
+                                        </div>
                                     {
                                         item.attributeArr.map((attr)=>(
-                                            <div className='border-[#d0d570] text-center bg-[#000000]/30 w-40 rounded-xl border-2'>
+                                            <div className='border-[#d0d570] text-center bg-[#000000]/30 w-40 py-2 rounded-xl border-2'>
                                                 <h3 className='text-[#d0d570] text-md text-bold'>{attr.trait_type}</h3>
                                                 <h3 className='text-white text-sm text-semibold'>{attr.value}</h3>
                                             </div>
