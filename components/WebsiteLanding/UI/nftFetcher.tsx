@@ -7,7 +7,8 @@ import { ContractAdd } from '@/utils/contractAds'
 import Image from 'next/image'
 import guitar from "@/assets/WebsiteLanding/logos/guitar.png"
 import { IoIosArrowBack } from 'react-icons/io'
-import { MdBlurCircular } from 'react-icons/md'
+
+import bg from "@/assets/WebsiteLanding/collectionbg.jpg"
 
 import blur from "@/assets/WebsiteLanding/logos/blur2.png"
 import opensea from "@/assets/WebsiteLanding/logos/opensea2.png"
@@ -33,7 +34,7 @@ export const NftFetcher = () => {
     async function contractSetup(){
         const provider = ethers.getDefaultProvider("https://mainnet.infura.io/v3/2d79cc1bf74a4f578c497d810215b1f9");
         // const signer = provider.getSigner();
-        console.log("provider", provider);
+        // console.log("provider", provider);
         try {
           const contract = new ethers.Contract(ContractAdd.contract, abi, provider);
           return contract;
@@ -77,11 +78,16 @@ export const NftFetcher = () => {
         <h2 className='text-[56px] text-[#e7b34e] relative mb-10'>Collection</h2>
        </div>
         <div className='w-full'>
-            <div className='flex max-md:flex-col bg-[#d0d570]/20 py-10 md:p-4 rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
+            <div className='flex max-md:flex-col bg-[#d0d570]/20 py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
+                
+                <div className='absolute h-full w-[150rem] md:w-[90rem] overflow-hidden object-cover'>
+                    <Image src={bg} alt='hello' className='w-[150rem] max-md:h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
+                </div>
+
                 <button onClick={()=>{if(index==0){setIndex(19)} else{setIndex(prev => prev-1)}}} className="text-5xl mx-auto max-md:rotate-90 bg-transparent hover:bg-white/30 p-2 rounded-full duration-200" ><IoIosArrowBack/></button>
                 {data.map((item, i)=>(
                     <>
-                        { i == index && <div className='flex max-md:flex-col gap-8 w-[100%] px-4'>
+                        { i == index && <div className='flex max-md:flex-col relative z-[1] gap-8 w-[100%] px-4'>
                         <div className='overflow-hidden w-[40%] max-md:w-[100%] md:max-w-[35rem] md:max-h-[35rem] md:min-h-[20rem] md:min-w-[20rem]'>
                             <Image width={1080} height={1080} src={item.img} alt="hello" className='border-dashed border-[#e7b34e] border-4 rounded-xl' />
                         </div>

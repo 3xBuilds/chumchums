@@ -16,31 +16,31 @@ export const Team = () => {
       name: "Simple Cat",
       post: "Artist",
       pic: simplecat,
-      twitter: "https://x.com/simplecatnft"
+      twitter: "https://x.com/simplecatnft?s=21&t=0Mnt-VaZLRXy59s-7KkMmA"
     },
     {
       name: "Muchacho Major",
       post: "CEO",
       pic: muchacho,
-      twitter: "https://x.com/Muchachomajor"
+      twitter: "https://x.com/muchachomajor?s=21&t=0Mnt-VaZLRXy59s-7KkMmA"
     },
     {
       name: "Melissa Mimosa",
-      post: "Mother of Chums/The Don",
+      post: "Mother of Chums",
       pic: melissa,
-      twitter: "https://x.com/MelisaMimosa420"
+      twitter: "https://x.com/melisamimosa420?s=21&t=0Mnt-VaZLRXy59s-7KkMmA"
     },
     {
       name: "JohnD",
       post: "Treasurer/Inspector",
       pic: johnD,
-      twitter: "https://x.com/Jdooplantman"
+      twitter: "https://x.com/jdooplantman?s=21&t=0Mnt-VaZLRXy59s-7KkMmA"
     },
     {
       name: "Cleofis",
       post: "c l e o",
       pic: cleofis,
-      twitter: "https://x.com/thiscleofis"
+      twitter: "https://x.com/thiscleofis?s=21&t=0Mnt-VaZLRXy59s-7KkMmA"
     }
     
   ]
