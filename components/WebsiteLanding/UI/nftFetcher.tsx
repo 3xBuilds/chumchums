@@ -104,7 +104,7 @@ export const NftFetcher = () => {
         <h2 className='text-[56px] text-[#e7b34e] relative mb-10'>Collection</h2>
        </div>
         <div className='w-full'>
-            <div className='flex bg-[#d0d570]/20 py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
+            <div className='flex bg-[#d0d570]/20 max-md:min-h-[30rem] md:min-h-[20rem] py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
                 
                 <div className='absolute h-full w-[150rem] md:w-[90rem] overflow-hidden object-cover'>
                     <Image src={bg} alt='hello' className='w-[150rem] h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
