@@ -13,14 +13,20 @@ import bg from "@/assets/WebsiteLanding/collectionbg.jpg"
 import blur from "@/assets/WebsiteLanding/logos/blur2.png"
 import opensea from "@/assets/WebsiteLanding/logos/opensea2.png"
 import magiceden from "@/assets/WebsiteLanding/logos/magiceden2.png"
+import axios from 'axios'
 
 
 export const NftFetcher = () => {
 
+    interface Obj {
+        trait_type: string,
+        value: string
+    }
     interface Prop {
         owner: string,
         img: string,
-        tokenId: number
+        tokenId: number,
+        attributeArr: Array<Obj>
     }
 
     const[tokenId, setTokenId] = useState<number>(0);
@@ -33,8 +39,7 @@ export const NftFetcher = () => {
 
     async function contractSetup(){
         const provider = ethers.getDefaultProvider("https://mainnet.infura.io/v3/2d79cc1bf74a4f578c497d810215b1f9");
-        // const signer = provider.getSigner();
-        // console.log("provider", provider);
+
         try {
           const contract = new ethers.Contract(ContractAdd.contract, abi, provider);
           return contract;
@@ -52,7 +57,13 @@ export const NftFetcher = () => {
                 const tokenId = Math.floor(5699*Math.random());
                 const owner = await contract?.ownerOf(tokenId);
                 const img = "https://gateway.pinata.cloud/ipfs/QmXcSqfgLDPWaZBxrM3fxWenaE9nTDQGGtC59twFsphf92/"+tokenId+".png"
-                setData(oldArr => [...oldArr, {owner, img, tokenId}])
+
+                const res = await axios.get("https://gateway.pinata.cloud/ipfs/Qmem6x3tee8t1thwaCzcFi5DjaZHkHwJniceizdMTmmVfh/"+tokenId);
+                
+                
+                const attributeArr = res.data.attributes;
+
+                setData(oldArr => [...oldArr, {owner, img, tokenId, attributeArr}])
             }
             
         }
@@ -60,7 +71,6 @@ export const NftFetcher = () => {
             console.log(err);
         }
     }
-
 
 
     useEffect(()=>{
@@ -95,10 +105,22 @@ export const NftFetcher = () => {
                             <div className='flex flex-col items-start md:my-10 max-md:my-5 h-full gap-2 justify-start w-full'>
                                 <h2 className='text-4xl md:text-6xl text-nowrap'>Chum #{item.tokenId}</h2>
                                 <h3 className='text-[#d0d570] text-xl md:text-2xl text-nowrap' >Owned By: <span className='truncate text-white'>{item.owner.substring(0,5)}...{item.owner.substring(item.owner.length-6, item.owner.length)}</span></h3>
+                                
+                                <div className='flex flex-wrap gap-2 items-center justify-start max-md:justify-center'>
+                                    {
+                                        item.attributeArr.map((attr)=>(
+                                            <div className='border-[#d0d570] text-center bg-[#000000]/30 w-40 rounded-xl border-2'>
+                                                <h3 className='text-[#d0d570] text-md text-bold'>{attr.trait_type}</h3>
+                                                <h3 className='text-white text-sm text-semibold'>{attr.value}</h3>
+                                            </div>
+                                        ))
+                                    }
+                                </div>
+
                                 <div className='flex max-md:flex-col gap-4 items-center w-full h-full flex-wrap mt-10 '>
-                                    <a href={"https://blur.io/eth/asset/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423/"+tokenId} target='_blank' className='bg-black text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-white/30 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={blur} alt="blur" className='w-8' />Blur</a>
-                                    <a href={"https://blur.io/eth/asset/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423/"+tokenId} target='_blank' className='bg-blue-500 text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-blue-400 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={opensea} alt="blur" className='w-8' />Opensea</a>
-                                    <a href={"https://blur.io/eth/asset/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423/"+tokenId} target='_blank' className=' bg-rose-500 text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-rose-400 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={magiceden} alt="blur" className='w-8' />Magic Eden</a>
+                                    <a href={"https://blur.io/eth/asset/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423/"+item.tokenId} target='_blank' className='bg-black text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-white/30 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={blur} alt="blur" className='w-8' />Blur</a>
+                                    <a href={"https://opensea.io/assets/ethereum/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423/"+item.tokenId} target='_blank' className='bg-blue-500 text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-blue-400 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={opensea} alt="blur" className='w-8' />Opensea</a>
+                                    <a href={"https://magiceden.io/collections/ethereum/0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423?evmItemDetailsModal=1~0xe987e9b07ca431fe0c7e8f431fa4f94ab9ca2423~"+item.tokenId} target='_blank' className=' bg-rose-500 text-white text-xl w-40 hover:brightness-125 rounded-xl border-2 border-rose-400 duration-200 py-2 flex items-center justify-center gap-2' ><Image src={magiceden} alt="blur" className='w-8' />Magic Eden</a>
                                 </div>
                             </div>
                             </div>
