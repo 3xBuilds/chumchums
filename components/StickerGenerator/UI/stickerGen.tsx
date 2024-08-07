@@ -140,7 +140,7 @@ export const StickerGen: React.FC = () => {
     }
 
     return (
-        <div className='w-screen h-screen max-md:overflow-x-hidden md:overflow-y-hidden object-cover overflow-hidden'>
+        <div className='w-screen h-screen max-md:overflow-x-hidden overflow-y-hidden object-cover overflow-hidden'>
             <div className='object-cover absolute top-0 w-full h-full left-0 overflow-hidden flex items-center justify-center'>
             
             {/* <div className='absolute z-50 top-0 w-full h-full pointer-events-none'> */}
@@ -184,7 +184,7 @@ export const StickerGen: React.FC = () => {
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row max-md:flex-col md:h-[26rem] h-[30rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[2rem]'>
+            <div className='flex md:flex-row max-md:flex-col md:h-[26rem] h-[60vh] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[2rem]'>
                 
                 <div className='flex gap-2 top-5 overflow-x-scroll relative w-[20rem] bg-white/20  pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2'>
