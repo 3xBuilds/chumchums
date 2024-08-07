@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect } from 'react'
 import { FaDice } from 'react-icons/fa'
-import { IoDownload } from 'react-icons/io5'
+import { IoDownload, IoShuffle } from 'react-icons/io5'
 import { useState } from 'react'
 import Image from 'next/image'
 
@@ -23,8 +23,11 @@ import outline_up from "@/assets/StickerGenerator/background/outline_up.png"
 import random_down from "@/assets/StickerGenerator/background/random_down.png"
 import random_up from "@/assets/StickerGenerator/background/random_up.png"
 
+import phoneBg from "@/assets/StickerGenerator/background/phoneBg.png";
+
 
 import bg from "@/assets/StickerGenerator/background/Untitled_Artwork_3.png"
+import { IoMdDownload } from 'react-icons/io'
 
 export const StickerGen: React.FC = () => {
 
@@ -143,7 +146,7 @@ export const StickerGen: React.FC = () => {
             {/* <div className='absolute z-50 top-0 w-full h-full pointer-events-none'> */}
                 {/* <Image alt='bg' unoptimized width={1920} height={1080} src={bg} className="max-2xl:w-[40rem] 2xl:w-[45rem] pointer-events-none z-[50]"/> */}
                 <div className='absolute max-md:hidden'>
-                    <Image src={bg} alt='bg' className='fixed top-0 h-screen w-[20rem] left-0 object-cover z-50 pointer-events-none ' />
+                    <Image src={bg} alt='bg' className='fixed top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
 
                     <div className=' top-5 left-5 fixed h-screen flex items-center justify-center w-full pointer-events-none z-[1000000] '>
                         <button className={`absolute ${selectedType != 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] z-[100] pointer-events-auto object-contain`} ><Image src={bg_down} alt="bg_down" className='w-[30rem] scale-[1.1]'/></button>
@@ -175,43 +178,27 @@ export const StickerGen: React.FC = () => {
                     </div>
                 </div>
 
-                <div className='absolute'>
-                    <Image src={bg} alt='bg' className='fixed top-0 h-screen w-full  left-0 object-cover z-50 pointer-events-none ' />
-
-                    <div className=' top-5 left-5 fixed h-screen flex items-center justify-center w-full pointer-events-none z-[1000000] '>
-                        <button className={`absolute ${selectedType != 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] z-[100] pointer-events-auto object-contain`} ><Image src={bg_down} alt="bg_down" className='w-[30rem] scale-[1.1]'/></button>
-                        <button onClick={()=>{setSelectedType(5);}} className={`absolute ${selectedType == 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] overflow-hidden z-[100] pointer-events-auto`} ><Image src={bg_up} alt="bg_down" className='scale-[1.1]'/></button>
-
-                        <button className={`absolute ${selectedType != 1 && "hidden"} h-[4.5rem] w-[10rem] translate-x-[-21rem] translate-y-[13rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={heads_down} alt="heads_down"/></button>
-                        <button onClick={()=>{setSelectedType(1);}} className={`absolute ${selectedType == 1 && "hidden"} w-[10rem] translate-x-[-21rem] translate-y-[13rem] h-[4.5rem]  object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={heads_up} alt="heads_down"/></button>
-
-                        <button className={`absolute ${selectedType != 2 && "hidden"} h-[4.5rem] w-[10rem] translate-x-[-12rem] translate-y-[13rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={body_down} alt="body_down"/></button>
-                        <button onClick={()=>{setSelectedType(2);}} className={`absolute ${selectedType == 2 && "hidden"} w-[10rem] h-[4.5rem] translate-x-[-12rem] translate-y-[13rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={body_up} alt="body_down"/></button>
-
-                        <button className={`absolute ${selectedType != 3 && "hidden"} w-[10rem] translate-x-[-7.5rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image src={face_down} alt="heads_down" className='scale-[1.15]'/></button>
-                        <button onClick={()=>{setSelectedType(3);}} className={`absolute ${selectedType == 3 && "hidden"} w-[10rem] translate-x-[-7.5rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={face_up} alt="heads_down"/></button>
-
-                        <button className={`absolute ${selectedType != 4 && "hidden"} w-[10rem] translate-x-[2rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image src={chum_down} alt="chum_down" className='scale-[1.15]'/></button>
-                        <button onClick={()=>{setSelectedType(4);}} className={`absolute ${selectedType == 4 && "hidden"} w-[10rem] translate-x-[1.8rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image className='scale-[1.15]' src={chum_up} alt="chum_up"/></button>
-
-                        <button onClick={()=>{setRandomDown(true); randomize()}} className={`absolute ${randomDown && "hidden"} w-[10rem] translate-x-[12rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image className='' src={random_up} alt="chum_up"/></button>
-                        <button className={`absolute   ${!randomDown && "hidden"} w-[10rem] translate-x-[12rem] translate-y-[8.2rem] overflow-hidden object-contain z-[100] pointer-events-auto`} ><Image className='' src={random_down} alt="chum_up"/></button>
-
-
-                        <button className={`absolute ${selectedType != 0 && "hidden"} h-20 w-[14rem] translate-x-[1rem] translate-y-[12.5rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='' src={outline_down} alt="body_down"/></button>
-                        <button onClick={()=>{setSelectedType(0);}} className={`absolute ${selectedType == 0 && "hidden"} w-[14rem] translate-x-[1rem] translate-y-[12.5rem] h-20 object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='' src={outline_up} alt="body_down"/></button>
-                    
-                        <button onClick={()=>{setDownloadDown(true);handleDownload()}} className={`absolute ${downloadDown && "hidden"} w-[14rem] translate-x-[15rem] translate-y-[12.5rem] h-[5.4rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='' src={download_up} alt="download_up"/></button>
-                        <button className={`absolute   ${!downloadDown && "hidden"} w-[14rem] translate-x-[15rem] translate-y-[12.5rem] h-[5.4rem] object-contain overflow-hidden z-[100] pointer-events-auto`} ><Image className='' src={download_down} alt="download_up"/></button>
-
-
-                    </div>
+                <div className='absolute md:hidden top-0'>
+                    <Image src={phoneBg} alt='bg' className='fixed top-0 h-screen w-full  left-0 object-cover z-50 pointer-events-none ' />
                 </div>
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row max-md:flex-col h-[26rem] items-center gap-2 justify-center overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto translate-y-[-7rem]'>
-                <div className='md:h-full h-[8rem] md:w-[15rem] w-[15rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2'>
+            <div className='flex md:flex-row max-md:flex-col md:h-[26rem] h-[30rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[2rem]'>
+                
+                <div className='flex gap-2 top-5 overflow-x-scroll relative w-[20rem] bg-white/20  pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
+                    <div className='grid grid-rows-1 grid-flow-col gap-2'>
+                        <button onClick={()=>{setSelectedType(5)}} className={`${selectedType == 5 ? "bg-yellow-400 scale-110 border-2 border-white shadow-xl shadow-yellow-400/20":"bg-yellow-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Background</button>
+                        <button onClick={()=>{setSelectedType(1)}} className={`${selectedType == 1 ? "bg-orange-400 scale-110 border-2 border-white shadow-xl shadow-orange-400/20":"bg-orange-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Head</button>
+                        <button onClick={()=>{setSelectedType(2)}} className={`${selectedType == 2 ? "bg-blue-400 scale-110 border-2 border-white shadow-xl shadow-blue-400/20":"bg-blue-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Body</button>
+                        <button onClick={()=>{setSelectedType(3)}} className={`${selectedType == 3 ? "bg-green-300 scale-110 border-2 border-white shadow-xl shadow-green-400/20":"bg-green-400 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Face</button>
+                        <button onClick={()=>{setSelectedType(4)}} className={`${selectedType == 4 ? "bg-green-600 scale-110 border-2 border-white shadow-xl shadow-green-600/20":"bg-green-700 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Chum</button>
+                    </div>
+
+
+                </div>
+                
+                <div className='md:h-full h-[8rem] md:w-[15rem] max-md:w-[20rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2'>
                     
                     <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                         <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
@@ -223,7 +210,7 @@ export const StickerGen: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className='md:h-full md:w-[67%]items-center flex flex-col gap-5 justify-center'>
+                <div className='md:h-full mt-5 md:w-[67%]items-center flex flex-col max-md:order-first gap-5 justify-center'>
                     {/* <h2 className='text-3xl'>Chum Generator <span className='text-[#e7b34e]' >3000</span></h2> */}
                     <div id='capture' ref={layeredImageRef} className='w-[512px] h-[512px] absolute -left-[80rem] overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
@@ -304,6 +291,11 @@ export const StickerGen: React.FC = () => {
                             style={{ width: "100%", height: "100%" }}
                         />
 
+                    </div>
+
+                    <div className='flex gap-5 items-center justify-center'>
+                        <button onClick={randomize} className='flex bg-purple-400 hover:bg-purple-500 rounded-xl duration-200 p-2 border-2 border-purple-600 items-center justify-center'><IoShuffle className='text-xl'/></button>
+                        <button onClick={handleDownload} className='flex bg-teal-400 hover:bg-teal-500 rounded-xl duration-200 p-2 border-2 border-teal-600 items-center justify-center'><IoMdDownload className='text-xl' /></button>
                     </div>
                     {/* <div className='flex gap-4 md:w-[55%] items-end justify-end'>
                         <button onClick={randomize} className='bg-[#B7C660] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
