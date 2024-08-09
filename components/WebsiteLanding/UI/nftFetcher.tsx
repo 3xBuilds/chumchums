@@ -9,6 +9,7 @@ import guitar from "@/assets/WebsiteLanding/logos/guitar.png"
 import { IoIosArrowBack } from 'react-icons/io'
 
 import bg from "@/assets/WebsiteLanding/collectionbg.jpg"
+import bg2 from "@/assets/WebsiteLanding/phonecollectionbg.jpg"
 
 import blur from "@/assets/WebsiteLanding/logos/blur2.png"
 import opensea from "@/assets/WebsiteLanding/logos/opensea2.png"
@@ -107,7 +108,9 @@ export const NftFetcher = () => {
             <div className='flex bg-[#d0d570]/20 max-md:min-h-[30rem] md:min-h-[20rem] py-10 relative md:p-4 overflow-hidden rounded-xl border-4 border-[#d0d570]/70 h-fit max-xl:gap-4 xl:gap-6 justify-center items-center w-[95%] mx-auto'>
                 
                 <div className='absolute h-full w-[150rem] md:w-[90rem] overflow-hidden object-cover'>
-                    <Image src={bg} alt='hello' className='w-[150rem] h-full md:w-[90rem] rounded-lg z-[1] brightness-[45%]' />
+                    <Image src={bg} alt='hello' className='w-[90rem] h-full max-md:hidden rounded-lg z-[1] brightness-[45%] blur-sm' />
+                    <Image src={bg2} alt='hello' className='w-[90rem] md:hidden rounded-lg z-[1] brightness-[30%] blur-sm' />
+
                 </div>
 
                 <button onClick={()=>{if(index==0){setIndex(19)} else{setIndex(prev => prev-1)}}} className="text-5xl max-md:absolute left-0 top-[11.5rem] max-md:bg-black/20 z-10 mx-auto bg-transparent hover:bg-white/30 p-2 rounded-full duration-200" ><IoIosArrowBack/></button>
@@ -120,7 +123,7 @@ export const NftFetcher = () => {
                         <div className='flex-col flex gap-10 md:w-[60%] items-end justify-end h-full'>
                             <div className='flex flex-col items-start md:my-10 max-md:my-5 h-full gap-2 justify-start w-full'>
                                 <h2 className='text-4xl md:text-6xl text-nowrap'>Chum #{item.tokenId}</h2>
-                                <h3 className='text-[#d0d570] text-xl md:text-2xl text-nowrap' >Owned By: <span className='truncate text-white'>{item.owner.substring(0,5)}...{item.owner.substring(item.owner.length-6, item.owner.length)}</span></h3>
+                                <h3 className='text-[#d0d570] text-xl md:text-2xl text-nowrap' >Owned By: <a href="" className='truncate text-white'>{item.owner.substring(0,5)}...{item.owner.substring(item.owner.length-6, item.owner.length)}</a></h3>
                                 
                                 <div className='flex flex-wrap gap-2 items-center justify-start max-md:justify-center'>
                                     <div className='border-[#d0d570] text-center bg-[#000000]/30 w-40 py-2 rounded-xl border-2'>

@@ -40,14 +40,14 @@ export const Navbar = () => {
   function bringDiv2(){
     document.getElementById("movingDiv2")?.classList.remove("-translate-y-[20rem]")
     document.getElementById("movingDiv2")?.classList.remove("max-md:-translate-y-[20rem]")
-    document.getElementById("movingDiv2")?.classList.add("translate-y-[6rem]")
-    document.getElementById("movingDiv2")?.classList.add("max-md:translate-y-[15rem]")
+    document.getElementById("movingDiv2")?.classList.add("translate-y-[5rem]")
+    document.getElementById("movingDiv2")?.classList.add("max-md:translate-y-[5rem]")
 
   }
 
   function removeDiv2(){
-      document.getElementById("movingDiv2")?.classList.remove("translate-y-[6rem]")
-      document.getElementById("movingDiv2")?.classList.remove("max-md:translate-y-[15rem]")
+      document.getElementById("movingDiv2")?.classList.remove("translate-y-[5rem]")
+      document.getElementById("movingDiv2")?.classList.remove("max-md:translate-y-[5rem]")
       document.getElementById("movingDiv2")?.classList.add("-translate-y-[20rem]")
       document.getElementById("movingDiv2")?.classList.add("max-md:-translate-y-[20rem]")
   }
@@ -79,7 +79,7 @@ export const Navbar = () => {
             </a>
         </div>
 
-        <div id="movingDiv2" className='-translate-y-[20rem] h-40 max-md:-translate-y-[20rem] max-md:w-[90%] z-[1000000] duration-300 absolute flex items-center justify-center gap-8 bg-black/70 py-4 border-2 border-black max-md:rounded-xl md:rounded-full px-8'>
+        <div id="movingDiv2" className='-translate-y-[20rem] h-20 max-md:-translate-y-[20rem] max-md:w-[90%] z-[1000000] duration-300 absolute flex items-center justify-center gap-8 bg-black/70 py-4 border-2 border-black max-md:rounded-xl md:rounded-full px-8'>
             
             <a className='cursor-pointer w-full ' href='https://www.instagram.com/chumchumsofficial?igsh=OGQ5ZDc2ODk2ZA==' target="_blank">
                 <div className='flex flex-col items-center w-10 justify-center mx-auto hover:-translate-y-[1px] duration-200'>
@@ -97,7 +97,7 @@ export const Navbar = () => {
                 </div>
             </a>
 
-            <div className='w-full block'>
+            <div className='w-full flex items-center justify-center'>
                 <button onClick={removeDiv2} className='hover:text-red-500 text-white duration-300'><ImCross/>
                     </button>
             </div>

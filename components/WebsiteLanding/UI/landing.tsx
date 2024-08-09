@@ -7,7 +7,7 @@ import { SiOpensea } from 'react-icons/si'
 import chumlogo from "@/assets/WebsiteLanding/logos/chumlogo.png"
 import { IoIosArrowForward } from "react-icons/io";
 
-import magiceden from "@/assets/WebsiteLanding/logos/magiceden.png"
+import magiceden from "@/assets/WebsiteLanding/logos/mouse.png"
 
 import art1 from "@/assets/WebsiteLanding/fillers/art1.jpeg"
 import art2 from "@/assets/WebsiteLanding/fillers/art2.jpeg"
@@ -47,7 +47,7 @@ export const Landing = () => {
          <h3 className='text-xl max-md:w-[80%] mb-10'>A Borderless Family ○ Leading with Love ○ Embracing Creativity ○ Manifesting Dreams </h3>
           <button onClick={()=>{router.push("/sticker")}} className='flex gap-2 relative hover:brightness-110 z-[3] items-center text-[#d4d87f] justify-center md:text-[1.5rem] px-4 py-2 rounded-full duration-200 w-[20rem] md:w-[25rem] hover:-translate-y-1 mt-12' >
             <Image src={buttonbg} alt="button" className='absolute z-[-1]' />
-            <Image src={magiceden} alt='magic' className='w-10 absolute -top-2 right-2 rotate-[-5deg] brightness-90 hue-rotate-[280deg]' /><div className='flex flex-col'>
+            <Image src={magiceden} alt='magic' className='w-24 absolute -top-[3.5rem] max-md:-right-3 right-0 rotate-[-5deg] brightness-90 hue-rotate-[280deg]' /><div className='flex flex-col'>
               <span className='text-white text-3xl max-md:text-2xl'>Chum Generator</span>
               <span className='text-3xl text-white max-md:text-2xl'>3000!!!</span>
               </div>
