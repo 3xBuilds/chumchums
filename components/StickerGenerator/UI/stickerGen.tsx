@@ -148,7 +148,7 @@ export const StickerGen: React.FC = () => {
                 <div className='absolute max-md:hidden'>
                     <Image src={bg} alt='bg' className='fixed top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
 
-                    <div className=' max-2xl:top-5 max-2xl:left-5 2xl:top-20 2xl:left-0 fixed h-screen flex items-center justify-center w-full pointer-events-none z-[1000000] '>
+                    <div className=' max-2xl:top-5 max-2xl:left-5 2xl:top-24 2xl:left-2 fixed h-screen flex items-center justify-center w-full pointer-events-none z-[1000000] '>
                         <button className={`absolute ${selectedType != 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] z-[100] pointer-events-auto object-contain`} ><Image src={bg_down} alt="bg_down" className='w-[30rem] scale-[1.1]'/></button>
                         <button onClick={()=>{setSelectedType(5);}} className={`absolute ${selectedType == 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] overflow-hidden z-[100] pointer-events-auto`} ><Image src={bg_up} alt="bg_down" className='scale-[1.1]'/></button>
 
@@ -198,7 +198,7 @@ export const StickerGen: React.FC = () => {
 
                 </div>
                 
-                <div className='md:h-[28rem] h-[7rem] md:w-[15rem] max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
+                <div className='md:h-[55vh] h-[7rem] md:w-[15rem] max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
                     
                     <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                         <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >

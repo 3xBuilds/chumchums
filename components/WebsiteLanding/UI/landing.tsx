@@ -44,11 +44,9 @@ export const Landing = () => {
 
         <div className='absolute md:top-[30%] max-lg:top-[30%] lg:top-[25%] z-50 w-full text-center flex items-center flex-col justify-center gap-2'>
           <Image src={chumlogo} alt='logo' className=' max-md:w-[95%] md:w-[60%] mb-5' />
-          {/* <div className='bg-[#e9b54d] w-[95%] h-52 rounded-xl border-8 border-black shadow-inner shadow-black/50'>
-
-          </div> */}
+         <h3 className='text-xl max-md:w-[80%] mb-10'>A Borderless Family ○ Leading with Love ○ Embracing Creativity ○ Manifesting Dreams </h3>
           <button onClick={()=>{router.push("/sticker")}} className='flex gap-2 relative hover:brightness-150 brightness-125 z-[3] items-center hue-rotate-[75deg] text-[#d4d87f] justify-center md:text-[1.5rem] px-4 py-2 rounded-full duration-200 w-[20rem] md:w-[25rem] hover:-translate-y-1 mt-12' >
-            <Image src={buttonbg} alt="button" className='absolute z-[-1] ' />
+            <Image src={buttonbg} alt="button" className='absolute z-[-1] hue-rotate-[-150deg] brightness-125' />
             <Image src={magiceden} alt='magic' className='w-10 absolute -top-2 right-2 rotate-[-5deg] brightness-90 hue-rotate-[280deg]' /><div className='flex flex-col'>
               <span className='text-white text-3xl max-md:text-2xl'>Chum Generator</span>
               <span className='text-3xl text-white max-md:text-2xl'>3000!!!</span>
