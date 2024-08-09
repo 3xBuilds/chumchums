@@ -186,7 +186,7 @@ export const StickerGen: React.FC = () => {
                 
             <div className='flex md:flex-row max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
-                <div className='flex gap-2 overflow-x-scroll relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
+                <div className='flex gap-2 overflow-x-scroll translate-y-2 relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2'>
                         <button onClick={()=>{setSelectedType(5)}} className={`${selectedType == 5 ? "bg-yellow-400 scale-110 border-2 border-white shadow-xl shadow-yellow-400/20":"bg-yellow-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Background</button>
                         <button onClick={()=>{setSelectedType(1)}} className={`${selectedType == 1 ? "bg-orange-400 scale-110 border-2 border-white shadow-xl shadow-orange-400/20":"bg-orange-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Head</button>
@@ -198,7 +198,7 @@ export const StickerGen: React.FC = () => {
 
                 </div>
                 
-                <div className='md:h-[55vh] h-[7rem] md:w-[15rem] max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
+                <div className='md:h-[55vh] h-[7rem] md:w-[15rem] -translate-y-4 max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
                     
                     <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                         <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
@@ -252,7 +252,7 @@ export const StickerGen: React.FC = () => {
                         />
 
                     </div>
-                    <div className='md:w-[19rem] md:h-[19rem] w-[10rem] h-[10rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
+                    <div className='md:w-[17rem] md:h-[17rem] w-[10rem] h-[10rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                         <img
                             src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
