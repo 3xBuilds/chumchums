@@ -184,21 +184,21 @@ export const StickerGen: React.FC = () => {
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row max-md:flex-col max-sm:h-[130vw] max-md:h-[100vw] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
+            <div className='flex md:flex-row max-md:flex-col max-sm:h-[30rem] max-md:h-[40rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
-                <div className='flex gap-2 top-5 overflow-x-scroll relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20  pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
+                <div className='flex gap-2 overflow-x-scroll relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2'>
-                        <button onClick={()=>{setSelectedType(5)}} className={`${selectedType == 5 ? "bg-yellow-400 scale-110 border-2 border-white shadow-xl shadow-yellow-400/20":"bg-yellow-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Background</button>
-                        <button onClick={()=>{setSelectedType(1)}} className={`${selectedType == 1 ? "bg-orange-400 scale-110 border-2 border-white shadow-xl shadow-orange-400/20":"bg-orange-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Head</button>
-                        <button onClick={()=>{setSelectedType(2)}} className={`${selectedType == 2 ? "bg-blue-400 scale-110 border-2 border-white shadow-xl shadow-blue-400/20":"bg-blue-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Body</button>
-                        <button onClick={()=>{setSelectedType(3)}} className={`${selectedType == 3 ? "bg-green-300 scale-110 border-2 border-white shadow-xl shadow-green-400/20":"bg-green-400 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Face</button>
-                        <button onClick={()=>{setSelectedType(4)}} className={`${selectedType == 4 ? "bg-green-600 scale-110 border-2 border-white shadow-xl shadow-green-600/20":"bg-green-700 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 duration-200 pointer-events-auto`}>Chum</button>
+                        <button onClick={()=>{setSelectedType(5)}} className={`${selectedType == 5 ? "bg-yellow-400 scale-110 border-2 border-white shadow-xl shadow-yellow-400/20":"bg-yellow-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Background</button>
+                        <button onClick={()=>{setSelectedType(1)}} className={`${selectedType == 1 ? "bg-orange-400 scale-110 border-2 border-white shadow-xl shadow-orange-400/20":"bg-orange-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Head</button>
+                        <button onClick={()=>{setSelectedType(2)}} className={`${selectedType == 2 ? "bg-blue-400 scale-110 border-2 border-white shadow-xl shadow-blue-400/20":"bg-blue-500 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Body</button>
+                        <button onClick={()=>{setSelectedType(3)}} className={`${selectedType == 3 ? "bg-green-300 scale-110 border-2 border-white shadow-xl shadow-green-400/20":"bg-green-400 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Face</button>
+                        <button onClick={()=>{setSelectedType(4)}} className={`${selectedType == 4 ? "bg-green-600 scale-110 border-2 border-white shadow-xl shadow-green-600/20":"bg-green-700 border-2 border-black"} px-3 py-2 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Chum</button>
                     </div>
 
 
                 </div>
                 
-                <div className='md:h-full h-[8rem] md:w-[15rem] max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2'>
+                <div className='md:h-[28rem] h-[7rem] md:w-[15rem] max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2'>
                     
                     <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                         <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
@@ -293,7 +293,7 @@ export const StickerGen: React.FC = () => {
 
                     </div>
 
-                    <div className='flex gap-5 items-center justify-center'>
+                    <div className='flex gap-5 items-center md:hidden justify-center'>
                         <button onClick={randomize} className='flex bg-purple-400 hover:bg-purple-500 rounded-xl duration-200 p-2 border-2 border-purple-600 items-center justify-center'><IoShuffle className='text-xl'/></button>
                         <button onClick={handleDownload} className='flex bg-teal-400 hover:bg-teal-500 rounded-xl duration-200 p-2 border-2 border-teal-600 items-center justify-center'><IoMdDownload className='text-xl' /></button>
                     </div>
