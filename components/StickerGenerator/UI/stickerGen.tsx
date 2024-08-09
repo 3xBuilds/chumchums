@@ -184,7 +184,7 @@ export const StickerGen: React.FC = () => {
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
+            <div className='flex md:flex-row 2xl:-translate-y-10 max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overflow-x-hidden md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
                 <div className='flex gap-2 overflow-x-scroll translate-y-2 relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2'>
@@ -198,7 +198,7 @@ export const StickerGen: React.FC = () => {
 
                 </div>
                 
-                <div className='md:h-[55vh] h-[7rem] md:w-[15rem] -translate-y-4 max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
+                <div className='max-2xl:h-[55vh] 2xl:h-[65vh] h-[7rem] md:w-[15rem] -translate-y-4 max-sm:w-[20rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2 overflow-y-hidden'>
                     
                     <div className='overflow-x-scroll max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
                         <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
