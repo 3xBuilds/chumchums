@@ -184,7 +184,7 @@ export const StickerGen: React.FC = () => {
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row max-md:flex-col max-sm:h-[30rem] max-md:h-[40rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
+            <div className='flex md:flex-row max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overscroll-none md:w-[38rem] md:translate-x-[-2rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
                 <div className='flex gap-2 overflow-x-scroll relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-4 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2'>
