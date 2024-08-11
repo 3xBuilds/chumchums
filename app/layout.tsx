@@ -8,7 +8,7 @@ const inter = Lilita_One({ subsets: ["latin"], weight: ['400'] });
 
 export const metadata: Metadata = {
   title: "Chum Chums",
-  description: "Chums be chuming",
+  description: "A Borderless Family ○ Leading with Love ○ Embracing Creativity ○ Manifesting Dreams",
 };
 
 export default function RootLayout({
