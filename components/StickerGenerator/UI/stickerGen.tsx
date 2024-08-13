@@ -142,7 +142,7 @@ export const StickerGen: React.FC = () => {
     return (
         <div className='w-screen h-screen overflow-hidden object-cover items-center justify-center'>
             <h3 className='relative w-full backdrop-blur-2xl z-[1000000000] top-4 text-center text-4xl bg-black/50 border-2 border-black rounded-xl px-4 py-2'>CHUM GENERATOR <span className='text-[#e7b34e]' >3000</span>!</h3>
-            <div className=' absolute top-1/2 -translate-y-1/2 w-screen h-screen left-0 overflow-hidden flex items-center justify-center'>
+            <div className=' absolute top-0 w-screen h-screen left-0 overflow-hidden flex items-center justify-center'>
             
             {/* <div className='absolute z-50 top-0 w-full h-full pointer-events-none'> */}
                 {/* <Image alt='bg' unoptimized width={1920} height={1080} src={bg} className="max-2xl:w-[40rem] 2xl:w-[45rem] pointer-events-none z-[50]"/> */}
@@ -179,13 +179,13 @@ export const StickerGen: React.FC = () => {
                     </div>
                 </div>
 
-                <div className='absolute w-screen h-screen md:hidden top-0 left-0 bottom-0 right-0 z-50 pointer-events-none'>
+                <div className='absolute w-screen h-full md:hidden top-0 left-0 bottom-0 right-0 z-50 pointer-events-none'>
                     <Image src={phoneBg} alt='bg' className=' md:hidden h-full w-full object-cover  pointer-events-none ' />
                 </div>
 
             {/* </div> */}
                 
-            <div className='flex max-md:translate-y-10 md:flex-row 2xl:-translate-y-36 max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overflow-x-hidden md:w-[38rem] 2xl:w-[45rem] max-md:translate-x-0 max-2xl:translate-x-[-3rem] 2xl:translate-x-[-6rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
+            <div className='flex max-md:translate-y-10 md:flex-row 2xl:-translate-y-36 max-md:flex-col h-screen items-center gap-2 md:justify-between max-md:justify-center max-md:gap-12 overflow-x-hidden md:w-[38rem] 2xl:w-[45rem] max-md:translate-x-0 max-2xl:translate-x-[-3rem] 2xl:translate-x-[-6rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
                 <div className='flex gap-2 overflow-x-scroll max-sm:translate-y-10 overflow-y-hidden translate-y-4 relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-2 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2 -translate-y-3'>
