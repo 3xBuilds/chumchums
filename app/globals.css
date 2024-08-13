@@ -7,6 +7,10 @@ html, body{
   height: -webkit-fill-available;
 }
 
+.fullscreen{
+  height: -webkit-fill-available;
+}
+
 body {
   color: white;
 }

@@ -4,7 +4,7 @@ import { StickerGen } from "@/components/StickerGenerator/UI/stickerGen";
 
 export default function Home() {
   return (
-    <main className="flex flex-col h-full overflow-y-hidden items-center justify-between bg-[#1E1E1E]">
+    <main className="flex flex-col h-screen overflow-hidden items-center justify-between bg-[#1E1E1E]">
         {/* <Navbar/> */}
         <StickerGen/>
     </main>
