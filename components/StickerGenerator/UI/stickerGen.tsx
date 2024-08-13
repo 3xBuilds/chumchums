@@ -140,16 +140,16 @@ export const StickerGen: React.FC = () => {
     }
 
     return (
-        <div className='w-screen h-screen max-md:overflow-hidden overflow-hidden object-cover items-center justify-center'>
+        <div className='w-screen h-screen max-md:overflow-x-hidden overflow-hidden object-cover items-center justify-center'>
             <h3 className='relative w-full backdrop-blur-2xl z-[1000000000] top-4 text-center text-4xl bg-black/50 border-2 border-black rounded-xl px-4 py-2'>CHUM GENERATOR <span className='text-[#e7b34e]' >3000</span>!</h3>
-            <div className='object-cover absolute top-0 w-full h-fit left-0 overflow-hidden flex items-center justify-center'>
+            <div className='object-cover absolute top-0 w-full h-full left-0 overflow-hidden flex items-center justify-center'>
             
             {/* <div className='absolute z-50 top-0 w-full h-full pointer-events-none'> */}
                 {/* <Image alt='bg' unoptimized width={1920} height={1080} src={bg} className="max-2xl:w-[40rem] 2xl:w-[45rem] pointer-events-none z-[50]"/> */}
                 <div className='absolute max-md:hidden'>
-                    <Image src={bg} alt='bg' className='fixed top-0 h-[100dvh] w-full left-0 object-cover z-50 pointer-events-none ' />
+                    <Image src={bg} alt='bg' className='fixed top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
 
-                    <div className=' max-2xl:top-5 max-2xl:left-5 2xl:top-[6vw] 2xl:left-2 fixed h-[100dvh] flex items-center justify-center w-full pointer-events-none z-[1000000] '>
+                    <div className=' max-2xl:top-5 max-2xl:left-5 2xl:top-[6vw] 2xl:left-2 fixed h-screen flex items-center justify-center w-full pointer-events-none z-[1000000] '>
                         <button className={`absolute ${selectedType != 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] z-[100] pointer-events-auto object-contain`} ><Image src={bg_down} alt="bg_down" className='w-[30rem] scale-[1.1]'/></button>
                         <button onClick={()=>{setSelectedType(5);}} className={`absolute ${selectedType == 5 && "hidden"} w-[12rem] translate-x-[-18rem] translate-y-[8rem] overflow-hidden z-[100] pointer-events-auto`} ><Image src={bg_up} alt="bg_down" className='scale-[1.1]'/></button>
 
@@ -180,12 +180,12 @@ export const StickerGen: React.FC = () => {
                 </div>
 
                 <div className='absolute md:hidden top-0'>
-                    <Image src={phoneBg} alt='bg' className='fixed top-0 h-[100dvh] w-full left-0 object-cover z-50 pointer-events-none ' />
+                    <Image src={phoneBg} alt='bg' className='fixed top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
                 </div>
 
             {/* </div> */}
                 
-            <div className='flex md:flex-row 2xl:-translate-y-36 max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overflow-hidden md:w-[38rem] 2xl:w-[45rem] max-md:translate-x-0 max-2xl:translate-x-[-3rem] 2xl:translate-x-[-6rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
+            <div className='flex max-md:translate-y-10 md:flex-row 2xl:-translate-y-36 max-md:flex-col max-sm:h-[30rem] max-md:h-[35rem] items-center gap-2 justify-between overflow-x-hidden md:w-[38rem] 2xl:w-[45rem] max-md:translate-x-0 max-2xl:translate-x-[-3rem] 2xl:translate-x-[-6rem] pointer-events-auto md:translate-y-[-7rem] translate-y-[3rem]'>
                 
                 <div className='flex gap-2 overflow-x-scroll max-sm:translate-y-10 overflow-y-hidden translate-y-4 relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-2 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2 -translate-y-3'>
