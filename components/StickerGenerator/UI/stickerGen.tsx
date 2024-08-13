@@ -140,7 +140,7 @@ export const StickerGen: React.FC = () => {
     }
 
     return (
-        <div className='w-screen h-[100dvh] max-md:overflow-x-hidden overflow-hidden object-cover items-center justify-center'>
+        <div className='w-screen max-h-[100dvh] max-md:overflow-x-hidden overflow-hidden object-contain items-center justify-center'>
             <h3 className='relative w-full backdrop-blur-2xl z-[1000000000] top-4 text-center text-4xl bg-black/50 border-2 border-black rounded-xl px-4 py-2'>CHUM GENERATOR <span className='text-[#e7b34e]' >3000</span>!</h3>
             <div className='object-cover absolute top-0 w-full h-full left-0 overflow-hidden flex items-center justify-center'>
             
