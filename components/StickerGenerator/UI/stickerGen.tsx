@@ -180,7 +180,7 @@ export const StickerGen: React.FC = () => {
                 </div>
 
                 {/* <div className='absolute md:hidden top-0'> */}
-                    <Image src={phoneBg} alt='bg' className='absolute md:hidden fullscreen top-0 h-screen w-full left-0 z-50 pointer-events-none ' />
+                    <Image src={phoneBg} alt='bg' className='absolute md:hidden top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
                 {/* </div> */}
 
             {/* </div> */}
