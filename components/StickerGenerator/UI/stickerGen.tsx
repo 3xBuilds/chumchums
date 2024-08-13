@@ -142,7 +142,7 @@ export const StickerGen: React.FC = () => {
     return (
         <div className='w-screen h-screen max-md:overflow-x-hidden overflow-hidden object-cover items-center justify-center'>
             <h3 className='relative w-full backdrop-blur-2xl z-[1000000000] top-4 text-center text-4xl bg-black/50 border-2 border-black rounded-xl px-4 py-2'>CHUM GENERATOR <span className='text-[#e7b34e]' >3000</span>!</h3>
-            <div className='object-cover absolute top-0 w-full h-full left-0 overflow-hidden flex items-center justify-center'>
+            <div className=' absolute top-1/2 -translate-y-1/2 w-screen h-screen left-0 overflow-hidden flex items-center justify-center'>
             
             {/* <div className='absolute z-50 top-0 w-full h-full pointer-events-none'> */}
                 {/* <Image alt='bg' unoptimized width={1920} height={1080} src={bg} className="max-2xl:w-[40rem] 2xl:w-[45rem] pointer-events-none z-[50]"/> */}
@@ -179,9 +179,9 @@ export const StickerGen: React.FC = () => {
                     </div>
                 </div>
 
-                <div className='absolute md:hidden top-0'>
-                    <Image src={phoneBg} alt='bg' className='fixed top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
-                </div>
+                {/* <div className='absolute md:hidden top-0'> */}
+                    <Image src={phoneBg} alt='bg' className='absolute top-0 h-screen w-full left-0 object-cover z-50 pointer-events-none ' />
+                {/* </div> */}
 
             {/* </div> */}
                 
