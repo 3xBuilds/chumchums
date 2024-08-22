@@ -253,7 +253,7 @@ export const StickerGen: React.FC = () => {
                         />
 
                     </div>
-                    <div className='md:w-[19rem] md:h-[19rem] max-md:w-[10rem] max-md:h-[10rem] max-sm:w-[8rem] max-sm:h-[8rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
+                    <div className='md:w-[19rem] md:h-[19rem] max-md:w-[14rem] max-md:h-[14rem] max-sm:w-[11rem] max-sm:h-[11rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                         <img
                             src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
