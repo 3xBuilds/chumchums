@@ -28,6 +28,7 @@ import phoneBg from "@/assets/StickerGenerator/background/phoneBg.png";
 
 import bg from "@/assets/StickerGenerator/background/Untitled_Artwork_3.png"
 import { IoMdDownload } from 'react-icons/io'
+import { GiEmptyChessboard } from 'react-icons/gi'
 
 export const StickerGen: React.FC = () => {
 
@@ -139,6 +140,14 @@ export const StickerGen: React.FC = () => {
         setRandomDown(false);
     }
 
+    function handleNaked(){
+        setSelectedTrait1(999);
+        setSelectedTrait2(999);
+        setSelectedTrait3(999);
+        setSelectedTrait4(999);
+        setSelectedTrait5(Math.floor(amount[5] * Math.random()));
+    }
+
     return (
         <div className='w-screen h-screen overflow-hidden object-cover items-center justify-center'>
             <h3 className='relative w-full backdrop-blur-2xl z-[1000000000] top-4 text-center text-4xl bg-black/50 border-2 border-black rounded-xl px-4 py-2'>CHUM GENERATOR <span className='text-[#e7b34e]' >3000</span>!</h3>
@@ -211,7 +220,7 @@ export const StickerGen: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className='md:h-full mt-5 md:w-[67%] items-center flex flex-col max-md:order-first gap-5 justify-center'>
+                <div className='md:h-full mt-5 md:w-[67%] items-center flex flex-col overflow-y-hidden max-md:order-first gap-5 justify-center'>
                     {/* <h2 className='text-3xl'>Chum Generator <span className='text-[#e7b34e]' >3000</span></h2> */}
                     <div id='capture' ref={layeredImageRef} className='w-[512px] h-[512px] absolute -left-[80rem] overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
@@ -253,9 +262,8 @@ export const StickerGen: React.FC = () => {
                         />
 
                     </div>
-                    <div className='md:w-[19rem] md:h-[19rem] max-md:w-[13rem] max-md:h-[13rem] max-sm:w-[10rem] max-sm:h-[10rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
-
-                        <img
+                    <div className='md:w-[16rem] md:h-[16rem] max-md:w-[13rem] max-md:h-[13rem] max-sm:w-[10rem] max-sm:h-[10rem] relative overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
+                    <img
                             src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
                             alt="Background"
                             className='w-full absolute z-0'
@@ -294,20 +302,14 @@ export const StickerGen: React.FC = () => {
 
                     </div>
 
+                    <button onClick={handleNaked} className='flex bg-yellow-400 hover:bg-yellow-500 rounded-xl duration-200 p-2 border-2 border-yellow-600 items-center justify-center gap-2 text-black'><GiEmptyChessboard className='text-xl' />Naked Chum</button>
+
+
                     <div className='flex gap-5 items-center max-md:mb-4 md:hidden justify-center'>
                         <button onClick={randomize} className='flex bg-purple-400 hover:bg-purple-500 rounded-xl duration-200 p-2 border-2 border-purple-600 items-center justify-center'><IoShuffle className='text-xl'/></button>
                         <button onClick={handleDownload} className='flex bg-teal-400 hover:bg-teal-500 rounded-xl duration-200 p-2 border-2 border-teal-600 items-center justify-center'><IoMdDownload className='text-xl' /></button>
                     </div>
-                    {/* <div className='flex gap-4 md:w-[55%] items-end justify-end'>
-                        <button onClick={randomize} className='bg-[#B7C660] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
-                            <FaDice className='text-2xl' />
-                            Randomize
-                        </button>
-                        <button onClick={handleDownload} className='bg-[#e7b34e] flex gap-2 text-xl items-center hover:brightness-110 duration-200 hover:-translate-y-1 text-black rounded-full py-2 px-4'>
-                            <IoDownload className='text-2xl' />
-                            Download
-                        </button>
-                    </div> */}
+                    
                 </div>
             </div>
             
