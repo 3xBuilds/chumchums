@@ -29,12 +29,14 @@ import phoneBg from "@/assets/StickerGenerator/background/phoneBg.png";
 import bg from "@/assets/StickerGenerator/background/Untitled_Artwork_3.png"
 import { IoMdDownload } from 'react-icons/io'
 import { GiEmptyChessboard } from 'react-icons/gi'
+import { TbPumpkinScary } from 'react-icons/tb'
 
 export const StickerGen: React.FC = () => {
 
     const layeredImageRef = useRef<HTMLDivElement>(null);
 
     const [selectedType, setSelectedType] = useState<number>(0);
+    const [selectedTrait0, setSelectedTrait0] = useState<number>(0);
     const [selectedTrait1, setSelectedTrait1] = useState<number>(0);
     const [selectedTrait2, setSelectedTrait2] = useState<number>(0);
     const [selectedTrait3, setSelectedTrait3] = useState<number>(0);
@@ -51,7 +53,7 @@ export const StickerGen: React.FC = () => {
         "Outline", "Head", "Body", "Face", "Chum", "Back Ground"
     ]
 
-    const amount = [1, 76, 71, 23, 87, 14];
+    const amount = [2, 79, 73, 23, 90, 16];
 
 
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -126,11 +128,12 @@ export const StickerGen: React.FC = () => {
 
     useEffect(() => {
         setDisplayArr([])
-        const arr = Array.from({ length: amount[selectedType] }, (_, index) => index);
+        const arr = Array.from({ length: amount[selectedType] }, (_, index) => index).reverse();
         setDisplayArr(arr);
     }, [selectedType])
 
     async function randomize() {
+        setSelectedTrait0(Math.floor(amount[0] * Math.random()));
         setSelectedTrait1(Math.floor(amount[1] * Math.random()));
         setSelectedTrait2(Math.floor(amount[2] * Math.random()));
         setSelectedTrait3(Math.floor(amount[3] * Math.random()));
@@ -146,6 +149,25 @@ export const StickerGen: React.FC = () => {
         setSelectedTrait3(999);
         setSelectedTrait4(999);
         setSelectedTrait5(Math.floor(amount[5] * Math.random()));
+    }
+
+    function handleHalloween(){
+        const head = [76, 77, 78];
+        const body = [72]
+        const chum = [87, 88, 89]
+        const bg = [14, 15]
+        const bodycal = Math.round(Math.random()) == 0 ? body[0] : 999
+        setSelectedTrait0(1);
+        if(bodycal == 72){
+            setSelectedTrait1(999)
+        }
+        else{
+            setSelectedTrait1(head[Math.round(Math.random()*2)]);
+        }
+        setSelectedTrait2(bodycal);
+        setSelectedTrait4(chum[Math.round(Math.random()*2)]);
+        setSelectedTrait5(bg[Math.round(Math.random()*1)]);
+
     }
 
     return (
@@ -198,6 +220,7 @@ export const StickerGen: React.FC = () => {
                 
                 <div className='flex gap-2 overflow-x-scroll max-sm:translate-y-10 overflow-y-hidden translate-y-4 relative max-sm:w-[20rem] max-md:w-[30rem] bg-white/20 pb-2 pt-6 md:hidden order-first px-10 pointer-events-none z-[1000000] '>
                     <div className='grid grid-rows-1 grid-flow-col gap-2 -translate-y-3'>
+                    <button onClick={()=>{setSelectedType(0)}} className={`${selectedType == 0 ? "bg-white scale-110 border-2 border-black shadow-xl shadow-white/20":"bg-white border-2 border-black"} px-3 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Outline</button>
                         <button onClick={()=>{setSelectedType(5)}} className={`${selectedType == 5 ? "bg-yellow-400 scale-110 border-2 border-white shadow-xl shadow-yellow-400/20":"bg-yellow-500 border-2 border-black"} px-3 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Background</button>
                         <button onClick={()=>{setSelectedType(1)}} className={`${selectedType == 1 ? "bg-orange-400 scale-110 border-2 border-white shadow-xl shadow-orange-400/20":"bg-orange-500 border-2 border-black"} px-3 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Head</button>
                         <button onClick={()=>{setSelectedType(2)}} className={`${selectedType == 2 ? "bg-blue-400 scale-110 border-2 border-white shadow-xl shadow-blue-400/20":"bg-blue-500 border-2 border-black"} px-3 rounded-xl text-lg text-black hover:scale-105 h-10 duration-200 pointer-events-auto`}>Body</button>
@@ -211,9 +234,9 @@ export const StickerGen: React.FC = () => {
                 <div className='md:h-[55vh] 2xl:h-[60vh] max-sm:-translate-y-10 h-[7rem] md:w-[18vw] md:py-12 max-md:-translate-y-5 max-sm:w-[25rem] max-md:w-[30rem] flex flex-col justify-center gap-2 bg-white/10 col-span-2  overflow-hidden'>
                     
                     <div className='overflow-x-scroll  md:overflow-x-hidden max-md:overflow-y-hidden w-full max-md:h-48 h-full'>
-                        <div className=' h-full gap-4 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
+                        <div className=' h-full gap-4 max-md:px-20 p-4 items-start max-md:justify-start md:justify-center md:flex md:flex-wrap max-md:w-fit max-md:grid max-md:grid-flow-col max-md:grid-rows-1 mx-auto' >
                             {displayArr?.length != 0 && displayArr.map((item: number) => (
-                                <button onClick={() => { if (selectedType == 1) setSelectedTrait1(item); if (selectedType == 2) setSelectedTrait2(item); if (selectedType == 3) setSelectedTrait3(item); if (selectedType == 4) setSelectedTrait4(item); if (selectedType == 5) setSelectedTrait5(item); }} className='flex cursor-pointer items-center justify-center hover:scale-105 duration-200 w-20 h-20 bg-white/10 rounded-xl gap-5' >
+                                <button onClick={() => { if(selectedType == 0) setSelectedTrait0(item); if (selectedType == 1) setSelectedTrait1(item); if (selectedType == 2) setSelectedTrait2(item); if (selectedType == 3) setSelectedTrait3(item); if (selectedType == 4) setSelectedTrait4(item); if (selectedType == 5) setSelectedTrait5(item); }} className='flex cursor-pointer items-center justify-center hover:scale-105 duration-200 w-20 h-20 bg-white/10 rounded-xl gap-5' >
                                     <img className='rounded-xl' src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/${selectedType}/${item + 1}.png`} alt={String(item)} />
                                 </button>
                             ))}
@@ -231,7 +254,7 @@ export const StickerGen: React.FC = () => {
                             style={{ width: "512px", height: "512px" }}
                         />
                         <img
-                            src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/0/1.png`}
+                            src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/0/${selectedTrait0 + 1}.png`}
                             alt="Outline"
                             className='w-screen absolute z-1'
                             style={{ width: "512px", height: "512px" }}
@@ -270,7 +293,7 @@ export const StickerGen: React.FC = () => {
                             style={{ width: "100%", height: "100%" }}
                         />
                         <img
-                            src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/0/1.png`}
+                            src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/0/${selectedTrait0 + 1}.png`}
                             alt="Outline"
                             className='w-screen absolute z-1'
                             style={{ width: "100%", height: "100%" }}
@@ -301,8 +324,11 @@ export const StickerGen: React.FC = () => {
                         />
 
                     </div>
-
-                    <button onClick={handleNaked} className='flex bg-yellow-400 hover:bg-yellow-500 rounded-xl duration-200 p-2 border-2 border-yellow-600 items-center justify-center gap-2 text-black'><GiEmptyChessboard className='text-xl' />Naked Chum</button>
+                    
+                    <div className='flex gap-2'>
+                        <button onClick={handleNaked} className='flex bg-yellow-400 hover:bg-yellow-500 rounded-xl duration-200 p-2 border-2 border-yellow-600 items-center justify-center gap-2 text-black'><GiEmptyChessboard className='text-xl' />Naked Chum</button>
+                        <button onClick={handleHalloween} className='flex bg-orange-400 hover:bg-orange-500 rounded-xl duration-200 p-2 border-2 border-orange-600 items-center justify-center gap-2 text-black'><TbPumpkinScary className='text-xl' /></button>
+                    </div>
 
 
                     <div className='flex gap-5 items-center max-md:mb-4 md:hidden justify-center'>
