@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'standalone',
     images: {
         domains: ['jlema-raffle-storage.s3.amazonaws.com'],
         unoptimized: true,

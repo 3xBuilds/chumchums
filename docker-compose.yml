@@ -1,0 +1,23 @@
+name: chumchums
+
+services:
+  app-prod:
+    image: ${DOCKER_REGISTRY:-3xbuilds}/chumchums-prod:${TAG:-latest}
+    build:
+      context: .
+      target: runner
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
+    container_name: chumchums-prod
+    restart: unless-stopped
+    ports:
+      - "${PROD_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=production
+    profiles: 
+      - prod
+
+volumes:
+  node_modules:
+  next_cache:
