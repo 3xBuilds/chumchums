@@ -245,7 +245,7 @@ export const StickerGen: React.FC = () => {
                 </div>
                 <div className='md:h-full mt-5 md:w-[67%] items-center flex flex-col overflow-y-hidden max-md:order-first gap-5 justify-center'>
                     {/* <h2 className='text-3xl'>Chum Generator <span className='text-[#e7b34e]' >3000</span></h2> */}
-                    <div id='capture' ref={layeredImageRef} className='w-[512px] h-[512px] absolute -left-[80rem] overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
+                    <div id='capture' ref={layeredImageRef} className='w-[2160px] h-[2160px] absolute -left-[300rem] overflow-hidden border-[5px] rounded-xl border-dashed border-white/15'>
 
                         <img
                             src={`https://dn57xylxk90g5.cloudfront.net/trait_layers/5/${selectedTrait5 + 1}.png`}
