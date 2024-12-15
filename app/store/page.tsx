@@ -13,7 +13,7 @@ export default function Home(){
     async function getItems(){
 
         const res = await axios.get("/api/printFulProducts")
-        console.log(res.data.prods);
+
         setProducts(res.data.prods)
     }
 
@@ -34,7 +34,7 @@ export default function Home(){
                 products.length === 0 ? <h3 className="w-full p-4 rounded-lg bg-black/20 text-center">Loading...</h3> : 
                 <div className="w-full flex gap-4 flex-wrap">
                     {products.map((product:any)=>(
-                        <div className="bg-orange-500 p-4 rounded-xl border-4 border-black flex flex-col items-center justify-center">
+                        <div className="bg-orange-500 p-4 rounded-xl border-4 shadow-xl shadow-orange-500/30 border-black flex flex-col items-center justify-center">
                             <Image className="w-60 h-60 rounded-xl border-4 border-black" width={1080} height={1080} src={product.thumbnail_url} alt={product.name}/>
                             <h3 className="text-center text-xl mt-4">{product.name}</h3>
                             {/* <div>
@@ -46,6 +46,7 @@ export default function Home(){
                                     </div>
                                 ))}
                             </div> */}
+                            <button className="bg-black w-full rounded-lg text-white py-4 mt-4 text-xl hover:scale-105 duration-200" >Buy</button>
                         </div>
                     ))}
                 </div>
